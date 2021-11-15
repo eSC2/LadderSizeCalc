@@ -12,3 +12,5 @@ Current WIP-Feature Ladder/Stair dimension calculator
 4. Implement additional functions
 
 Future Features Calculate Abseil Needle kN Assign/Save job Print Ladder Drawing w/ dimension from calculator
+
+15/11-2021 - "Added from Quantm-Desktop"
