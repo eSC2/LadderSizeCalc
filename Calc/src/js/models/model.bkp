@@ -1,0 +1,27 @@
+"use strict";
+
+import * as chkInputData from "./funcChkInputData.js";
+
+// Rung ladder object
+const ladderInfo = {
+  verticalHeight: "",
+  ladderPitch: "",
+  ladderBaseLength: "",
+  rungQty: "",
+  rungSpace: "",
+  topStileLength: "",
+  ladderWidth: "",
+  totalStileLength: "",
+};
+
+export const chkInput = function (data, handler) {
+  chkInputData.chkEmptyValues(data, handler);
+};
+
+export const submitInput = function (data) {
+  ladderInfo.verticalHeight = +data[0];
+  ladderInfo.ladderWidth = +data[1];
+  ladderInfo.ladderPitch = +data[2];
+
+  console.log(ladderInfo);
+};

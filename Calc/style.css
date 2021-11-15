@@ -1,0 +1,37 @@
+* {
+  line-height: 1.5;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+.input-area {
+  border: 3px solid blue;
+  line-height: 1.5;
+}
+
+.input-field {
+  border-style: dashed;
+}
+
+.btn-submit {
+  margin: 5px;
+}
+
+.dropdown-ladder-container {
+  position: relative;
+}
+
+.dropdown-ladder-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  width: 100%;
+  z-index: 1;
+  line-height: 1;
+}
+
+.show {
+  display: block;
+}

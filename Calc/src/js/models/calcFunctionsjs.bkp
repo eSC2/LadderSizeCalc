@@ -1,0 +1,70 @@
+"use strict";
+
+import { ladderComplianceData } from "../helpers.js";
+
+class RungLadder {
+  constructor(vHeight, width, pitch) {
+    this.verticalHeight = vHeight;
+    this.ladderWidth = width;
+    this.ladderPitch = pitch;
+  }
+}
+
+// Calculate radians
+const radianCalc = function (data) {
+  function calculate() {
+    return (data.ladderPitch * Math.PI) / 180;
+  }
+  return calculate();
+};
+
+// Calculate ladder base length
+const calcLadderBase = function (data) {
+  function calculate() {
+    return Math.trunc(data.verticalHeight / Math.sin(radianCalc(data)));
+  }
+  return calculate();
+};
+
+// Calculate rung quantity
+const calcRungQty = function (data) {
+  function calculate() {
+    return Math.ceil(data.ladderBaseLength / ladderComplianceData.maxRungSpc);
+  }
+  return calculate();
+};
+
+// Calculate rung spacing
+const calcRungSpc = function (data) {
+  function calculate() {
+    return Math.trunc(data.ladderBaseLength / data.rungQty);
+  }
+  return calculate();
+};
+
+// Calculate total stile length
+const calcTotalStileLength = function (data) {
+  function calculate() {
+    return data.ladderBaseLength + data.topStileLength;
+  }
+  return calculate();
+};
+
+const calcTopStile = function (data) {
+  function calculate() {
+    return data.ladderPitch !== 90 ? 1650 : 1350;
+  }
+  return calculate();
+};
+
+export const rungLadderCalc = function (data) {
+  const newRungLadder = new RungLadder(...data);
+
+  newRungLadder.ladderBaseLength = calcLadderBase(newRungLadder);
+  newRungLadder.rungQty = calcRungQty(newRungLadder);
+  newRungLadder.rungSpace = calcRungSpc(newRungLadder);
+  newRungLadder.topStileLength = calcTopStile(newRungLadder);
+  newRungLadder.totalStileLength = calcTotalStileLength(newRungLadder);
+
+  return newRungLadder;
+};
