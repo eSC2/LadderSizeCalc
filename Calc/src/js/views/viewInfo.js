@@ -16,7 +16,7 @@ class viewInfo extends View {
 
   _generateInfoDefault() {
     return `    
-      <h4>${infoText.infoDefault}</h4>
+      ${infoText.infoRungLadder}
       `;
   }
 

@@ -16,12 +16,11 @@ class viewCalc extends View {
   _calcRungLadder() {
     return `
     <div class="calc-rungladder">
-      <h2>Rung Ladder Calculator</h2>
       <div class="calc-view">
         <ul>
           <li>Vertical Height</li>
           <input class="input-field" vHeight />
-          <li>Ladder Width (Inside)</li>
+          <li>Ladder Width</li>
           <input class="input-field" ladderWidth />
           <li>Ladder Pitch</li>
           <input class="input-field" ladderPitch />

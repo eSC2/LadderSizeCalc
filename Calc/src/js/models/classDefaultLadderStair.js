@@ -37,7 +37,7 @@ export default class DefaultLadderStair {
   }
 
   _calcTopStile() {
-    return this.ladderPitch !== 90 ? 1650 : 1350;
+    return this.ladderPitch !== 90 ? 1065 : 1350;
   }
 
   _calcTotalMaterialStile() {

@@ -20,6 +20,8 @@ const renderResult = function (data) {
 };
 
 const renderError = function () {
+  viewCalc._clearInputField();
+  viewResult._renderData(viewResult._renderError());
   console.log("Input Error. Please Try Again");
 };
 

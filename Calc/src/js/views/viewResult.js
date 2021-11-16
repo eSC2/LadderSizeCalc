@@ -25,8 +25,15 @@ class viewResult extends View {
         <li>Rung Height: ${data.rungSpace}mm</li>
         <li>Rung Quantity: ${data.rungQty} off:</li>
         <br>
-        <li>Total Height: ${data.totalStileLength}mm:</li>
+        <li>Total Ladder Height: ${data.totalStileLength}mm:</li>
     </ul>
+    <P>Note: All dimensions given are measured from center-line.</p>
+    `;
+  }
+
+  _renderError() {
+    return `
+    <p>Input Error.. Please follow the guideline above and try again..</p>
     `;
   }
 }
