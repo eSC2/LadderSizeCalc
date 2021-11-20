@@ -4,11 +4,13 @@ OVERVIEW
 
 Web-Based Calculator for Height Safety Products
 
-The calculator needs to be able to CALCULATE A LADDER DIMENSION based on INPUT FROM USER, in ACCORDANCE & COMPLIES TO AUSTRALIAN STANDARD, by height, width and pitch. It will then recommend user which TYPE OF LADDER is best suitable complete with RESULT DIMENSIONS SHOWN as well as IMAGES CORRESPONDING to it. A simple GUIDELINE FROM AUSTRALIAN STANDARD will be available on site as a checklist.
+The calculator needs to be able to CALCULATE A LADDER DIMENSION based on INPUT FROM USER. The result has to be in ACCORDANCE/COMPLIES TO AUSTRALIAN STANDARD.
+User input is limited to height, width and pitch. A guideline of different types of ladder and required input will be available.
+Calculator result with DIMENSIONS will be shown as well as IMAGES CORRESPONDING to it.
 
 Ladder type involved includes RUNG LADDER, STEP LADDER and STAIR.
 
-The calculator needs to be EXPENDIBLE where future implementations can be done in accordance to user's need.
+The calculator needs to be EXPANDIBLE for future implementations in accordance to user's need.
 
 /////////////////////////////////
 
