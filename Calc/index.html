@@ -2,67 +2,82 @@
 
 <html>
   <head>
-    <title>Ladder/Stair Calc</title>
+    <title>Ladder Calculator</title>
     <link rel="stylesheet" href="style.css" />
   </head>
 
-  <body>
-    <h1>Ladder/Stair Calculator</h1>
-    <header>
-      <div class="info-view">
-        <!-- <h4>Info Text Here</h4> -->
-      </div>
+  <body class="main-content">
+    <div class="nav-menu">
+      <nav>Menu</nav>
+    </div>
+
+    <header class="ladder-calc-header">
+      <h1>LADDER SIZE CALCULATOR</h1>
+      <h2>FOR HEIGHT SAFETY SYSTEM</h2>
     </header>
 
-    <!-- <div class="dropdown-ladder-container">
-      <button class="dropdown-ladder-btn">Ladder</button>
-      <div class="dropdown-ladder-content">
-        <p class="dropdown-txt">Rung Ladder</p>
-        <br />
-        <p class="dropdown-txt">Step Ladder</p>
-        <br />
-        <p class="dropdown-txt">Stair</p>
-      </div>
-    </div> -->
-
-    <div class="container-calculator">
-      <!-- 
-        <div class="calc-rungladder">
-          <div class="calc-view">
-            <ul>
-              <li>Vertical Height</li>
-              <input class="input-field" vHeight />
-              <li>Ladder Width</li>
-              <input class="input-field" ladderWidth />
-              <li>Ladder Pitch</li>
-              <input class="input-field" ladderPitch />
-            </ul>
-            <button class="btn-submit">Calculate</button>
-          </div>
-        </div> 
-      -->
+    <div class="ladder-calc-info">
+      <p>
+        This calculator provides a quick ladder size calculation in accordance to Australian Standard. Results given is for guidance only. This site is not liable for any losses, damages or compliance
+        issues that inccured in connection with its tools. Seeking professional advises and certification from certified height safety supplier is highly recommended.
+      </p>
     </div>
 
-    <div class="container-result">
-      <h3>Result</h3>
-      <div class="result-table">
-        <!-- <ul>
-          <li>Vertical Height:</li>
-          <li>Overall Width:</li>
-          <li>Ladder Pitch:</li>
-          <li>Rung Height:</li>
-          <li>Rung Quantity:</li>
-        </ul> -->
+    <div class="ladder-calc-subhead">
+      <h2>CHOOSE A LADDER TYPE</h2>
+
+      <button class="btn-tabs">RUNG LADDER</button>
+      <button class="btn-tabs">STEP LADDER</button>
+      <button class="btn-tabs">STAIR</button>
+    </div>
+
+    <div class="ladder-calc-subcontent">
+      <div class="subcontent-sub-info">
+        <p>
+          A twin-stile rung ladder comprises of two stiles and rungs that assists user ascending/descending between levels. It is to be inclined between 70° and 90°, and can be both portable or
+          permanently fixed to a structure. The Australia Standard AS1657 sets out requirements for the design, selection, construction and installation of ladder and is to be strictly followed for
+          compliances. Please contact certified supplier/installer or visit Australian Standard AS1657 for more information.
+        </p>
+
+        <p>Vertical Height - Vertical measurement between levels (300mm - 6000mm)</p>
+        <p>Ladder Width - Desired width of the ladder measuring between stiles (375mm - 525mm)</p>
+        <p>Ladder Pitch - Desired slope of the ladder (70° - 90°)</p>
       </div>
-      <div class="materials-list">
-        <!-- <ul>
-          <h4>Material Usage</h4>
-          <li>Ladder Stile: ${data.totalMaterialStile}mm</li>
-          <li>Ladder Rung: ${data.totalMaterialTread}mm</li>
-        </ul> -->
+
+      <div class="subcontent-calculator">
+        <p>Vertical Height</p>
+        <input class="input-field" vHeight />
+        <p>Ladder Width</p>
+        <input class="input-field" ladderWidth />
+        <p>Ladder Pitch</p>
+        <input class="input-field" ladderPitch />
+
+        <button class="btn-calc">Calculate</button>
+
+        <p class="subcontent-message">Error Message Container</p>
       </div>
+
+      <!-- <div class="subcontent-result-rungladder">
+          <li>
+            <p>Vertical Height:</p>
+            <p>Ladder Width:</p>
+            <p>Ladder Pitch:</p>
+          </li>
+          <button class="btn-back">Back</button>
+          <button class="btn-save">Save</button>
+        </div> -->
+
+      <div class="subcontent-image">
+        <img class="result-img" src="./src/js/img/rungladderdwg.jpg" alt="Rung Ladder Drawing" />
+      </div>
+    </div>
+
+    <div class="links-menu">
+      <nav>Links</nav>
     </div>
   </body>
-  <!-- <script type="module" src="src/js/models/classDefaultLadderStair.js"></script> -->
-  <script type="module" src="src/js/controller.js"></script>
+
+  <footer class="footer">
+    <p>Author: ecSC2</p>
+  </footer>
 </html>

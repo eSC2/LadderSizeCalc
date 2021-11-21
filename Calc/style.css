@@ -1,37 +1,76 @@
 * {
-  line-height: 1.5;
-}
-
-body {
+  background-color: white;
   font-family: sans-serif;
+  /* line-height: 0; */
 }
 
-.input-area {
-  border: 3px solid blue;
-  line-height: 1.5;
-}
-
-.input-field {
-  border-style: dashed;
-}
-
-.btn-submit {
-  margin: 5px;
-}
-
-.dropdown-ladder-container {
-  position: relative;
-}
-
-.dropdown-ladder-content {
-  display: none;
-  position: absolute;
-  background-color: #f1f1f1;
+.result-img {
   width: 100%;
-  z-index: 1;
-  line-height: 1;
+  height: 100%;
 }
 
-.show {
-  display: block;
+.main-content {
+  background-color: rgb(240, 240, 240);
+  display: grid;
+  grid-template-columns: 1fr 15% 60% 15% 1fr;
+  grid-template-rows: 5% 15% 15% auto 1%;
+  grid-template-areas:
+    ". menu header link ."
+    ". menu info link ."
+    ". menu subhead link ."
+    ". menu subcontent link ."
+    ". menu footer link .";
+}
+
+.ladder-calc-subcontent {
+  grid-area: subcontent;
+  display: grid;
+  grid-template-columns: 30% auto;
+  grid-template-rows: 30% auto;
+  grid-template-areas:
+    "subinfo subinfo"
+    "calc-result img";
+}
+
+.nav-menu {
+  background-color: rgb(240, 240, 240);
+  grid-area: menu;
+}
+
+.ladder-calc-header {
+  grid-area: header;
+}
+
+.ladder-calc-info {
+  grid-area: info;
+}
+
+.ladder-calc-subhead {
+  grid-area: subhead;
+}
+
+.links-menu {
+  background-color: rgb(240, 240, 240);
+  grid-area: link;
+}
+
+.subcontent-sub-info {
+  grid-area: subinfo;
+}
+
+.subcontent-calculator {
+  grid-area: calc-result;
+  place-self: center;
+}
+
+.subcontent-image {
+  grid-area: img;
+}
+
+.subcontent-message {
+  grid-area: message;
+}
+
+.footer {
+  grid-area: footer;
 }
