@@ -1,19 +1,35 @@
 * {
   background-color: white;
-  font-family: sans-serif;
-  /* line-height: 0; */
+  font-family: "Montserrat", sans-serif;
+  padding: 0;
+  margin: 0;
+  line-height: 1;
 }
 
-.result-img {
-  width: 100%;
-  height: 100%;
+h1 {
+  font-weight: bold;
+  padding: 10px 10px 0px;
+}
+
+h2 {
+  padding: 5px 10px 5px;
+}
+
+p {
+  line-height: 1.5;
+}
+
+li {
+  list-style-type: none;
+  line-height: 2;
 }
 
 .main-content {
   background-color: rgb(240, 240, 240);
   display: grid;
-  grid-template-columns: 1fr 15% 60% 15% 1fr;
-  grid-template-rows: 5% 15% 15% auto 1%;
+  height: 100vh;
+  grid-template-columns: 1fr 200px 50% 200px 1fr;
+  grid-template-rows: auto;
   grid-template-areas:
     ". menu header link ."
     ". menu info link ."
@@ -23,10 +39,15 @@
 }
 
 .ladder-calc-subcontent {
+  padding-left: 20px;
+  padding-right: 20px;
   grid-area: subcontent;
   display: grid;
+  justify-content: center;
+  max-width: 100%;
+  height: auto;
   grid-template-columns: 30% auto;
-  grid-template-rows: 30% auto;
+  grid-template-rows: auto;
   grid-template-areas:
     "subinfo subinfo"
     "calc-result img";
@@ -43,10 +64,17 @@
 
 .ladder-calc-info {
   grid-area: info;
+  padding: 5px 10px;
 }
 
 .ladder-calc-subhead {
   grid-area: subhead;
+  padding-top: 20px;
+  padding-left: 20px;
+}
+
+.ladder-calc-subhead > h2 {
+  padding-left: 0px;
 }
 
 .links-menu {
@@ -60,17 +88,48 @@
 
 .subcontent-calculator {
   grid-area: calc-result;
-  place-self: center;
+  place-self: auto center;
+  padding-top: 30px;
+  padding-left: 10px;
 }
 
 .subcontent-image {
   grid-area: img;
 }
 
+.result-img {
+  max-width: 100%;
+  height: auto;
+}
+
 .subcontent-message {
   grid-area: message;
+  margin-top: 30px;
 }
 
 .footer {
   grid-area: footer;
+}
+
+.input-field {
+  margin-bottom: 10px;
+}
+
+.btn-tabs {
+  padding: 5px;
+  margin: 15px 5px 10px;
+}
+
+.btn-tabs:first-of-type {
+  margin-left: 0px;
+}
+
+.btn-calc {
+  padding: 5px;
+  margin-top: 10px;
+}
+
+.footer {
+  padding-left: 10px;
+  font-size: xx-small;
 }
