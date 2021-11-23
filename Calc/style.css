@@ -8,15 +8,16 @@
 
 h1 {
   font-weight: bold;
-  padding: 10px 10px 0px;
 }
 
 h2 {
-  padding: 5px 10px 5px;
+  padding-top: 5px;
 }
 
-p {
+p,
+nav {
   line-height: 1.5;
+  background-color: transparent;
 }
 
 li {
@@ -25,10 +26,10 @@ li {
 }
 
 .main-content {
-  background-color: rgb(240, 240, 240);
+  background-color: rgba(240, 240, 240, 0.7);
   display: grid;
   height: 100vh;
-  grid-template-columns: 1fr 200px 50% 200px 1fr;
+  grid-template-columns: 1fr 200px minmax(600px, 1000px) 200px 1fr;
   grid-template-rows: auto;
   grid-template-areas:
     ". menu header link ."
@@ -47,29 +48,33 @@ li {
   max-width: 100%;
   height: auto;
   grid-template-columns: 30% auto;
-  grid-template-rows: auto;
+  grid-template-rows: auto 30% auto;
   grid-template-areas:
     "subinfo subinfo"
-    "calc-result img";
+    "calc-result img"
+    "message img";
 }
 
 .nav-menu {
   background-color: rgb(240, 240, 240);
   grid-area: menu;
+  border-right-style: solid;
+  border-color: rgba(220, 220, 220, 0.5);
 }
 
 .ladder-calc-header {
   grid-area: header;
+  padding: 20px 20px 0px;
 }
 
 .ladder-calc-info {
   grid-area: info;
-  padding: 5px 10px;
+  place-self: stretch center;
+  padding: 0px 20px;
 }
 
 .ladder-calc-subhead {
   grid-area: subhead;
-  padding-top: 20px;
   padding-left: 20px;
 }
 
@@ -80,6 +85,8 @@ li {
 .links-menu {
   background-color: rgb(240, 240, 240);
   grid-area: link;
+  border-left-style: solid;
+  border-color: rgba(220, 220, 220, 0.5);
 }
 
 .subcontent-sub-info {
@@ -88,9 +95,13 @@ li {
 
 .subcontent-calculator {
   grid-area: calc-result;
-  place-self: auto center;
+  place-self: start center;
   padding-top: 30px;
-  padding-left: 10px;
+}
+
+.subcontent-calculator-btn {
+  padding-top: 10px;
+  text-align: center;
 }
 
 .subcontent-image {
@@ -100,11 +111,13 @@ li {
 .result-img {
   max-width: 100%;
   height: auto;
+  place-self: auto center;
 }
 
 .subcontent-message {
   grid-area: message;
-  margin-top: 30px;
+  margin-top: 10px;
+  place-self: start center;
 }
 
 .footer {
@@ -113,6 +126,7 @@ li {
 
 .input-field {
   margin-bottom: 10px;
+  place-self: auto center;
 }
 
 .btn-tabs {
@@ -126,7 +140,6 @@ li {
 
 .btn-calc {
   padding: 5px;
-  margin-top: 10px;
 }
 
 .footer {
