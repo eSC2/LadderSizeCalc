@@ -6,6 +6,14 @@
   line-height: 1;
 }
 
+h1,
+h2,
+p,
+nav,
+li {
+  color: rgba(0, 0, 0, 0.85);
+}
+
 h1 {
   font-weight: bold;
 }
@@ -15,8 +23,11 @@ h2 {
 }
 
 p,
-nav {
-  line-height: 1.5;
+nav,
+li {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  word-spacing: 0.2rem;
   background-color: transparent;
 }
 
@@ -25,7 +36,23 @@ li {
   line-height: 2;
 }
 
-.main-content {
+a {
+  color: rgba(0, 0, 0, 0.3);
+  background-color: transparent;
+  text-decoration: none;
+  font-size: 2rem;
+  font-weight: 900;
+}
+
+a:active {
+  color: default;
+}
+
+a:visited {
+  color: default;
+}
+
+.main-page {
   background-color: rgba(240, 240, 240, 0.7);
   display: grid;
   height: 100vh;
@@ -35,16 +62,15 @@ li {
     ". menu header link ."
     ". menu info link ."
     ". menu subhead link ."
+    ". menu tabs link ."
     ". menu subcontent link ."
     ". menu footer link .";
 }
 
 .ladder-calc-subcontent {
-  padding-left: 20px;
-  padding-right: 20px;
+  padding: 5px 20px 0px 20px;
   grid-area: subcontent;
   display: grid;
-  justify-content: center;
   max-width: 100%;
   height: auto;
   grid-template-columns: 30% auto;
@@ -55,38 +81,48 @@ li {
     "message img";
 }
 
-.nav-menu {
+.nav-menu,
+.links-menu {
   background-color: rgb(240, 240, 240);
+  border-color: rgba(220, 220, 220, 0.5);
+  justify-self: stretch;
+  /* align-content: center; */
+}
+
+.nav-menu {
   grid-area: menu;
   border-right-style: solid;
-  border-color: rgba(220, 220, 220, 0.5);
+}
+
+.links-menu {
+  grid-area: link;
+  border-left-style: solid;
 }
 
 .ladder-calc-header {
   grid-area: header;
-  padding: 20px 20px 0px;
+  padding: 10px 20px;
 }
 
 .ladder-calc-info {
   grid-area: info;
-  place-self: stretch center;
   padding: 0px 20px;
 }
 
 .ladder-calc-subhead {
   grid-area: subhead;
-  padding-left: 20px;
+  padding: 30px 0px 0px 20px;
 }
 
 .ladder-calc-subhead > h2 {
   padding-left: 0px;
 }
 
-.links-menu {
-  background-color: rgb(240, 240, 240);
-  grid-area: link;
-  border-left-style: solid;
-  border-color: rgba(220, 220, 220, 0.5);
+.ladder-calc-tabs {
+  grid-area: tabs;
+  padding-left: 20px;
+  display: flex;
+  align-content: flex-end;
 }
 
 .subcontent-sub-info {
@@ -122,16 +158,43 @@ li {
 
 .footer {
   grid-area: footer;
+  justify-content: center start;
+}
+
+.footer > p {
+  padding-left: 10px;
+  font-size: 0.8rem;
 }
 
 .input-field {
+  height: 1.5rem;
   margin-bottom: 10px;
   place-self: auto center;
 }
 
 .btn-tabs {
-  padding: 5px;
-  margin: 15px 5px 10px;
+  font-size: 100%;
+  padding: 7px;
+  margin: 15px 2px 5px;
+  background-color: transparent;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  border-bottom: none;
+  transition: background-color 0.1s ease-in-out;
+}
+
+.btn-tabs:nth-child(1) {
+  border-bottom: solid;
+  border-bottom-color: rgba(255, 0, 0, 0.8);
+}
+
+.btn-tabs:hover {
+  background-color: rgba(255, 0, 0, 0.5);
+}
+
+.btn-tabs:active {
+  background-color: red;
+  transition: background-color 0s;
 }
 
 .btn-tabs:first-of-type {
@@ -139,10 +202,6 @@ li {
 }
 
 .btn-calc {
+  font-size: 100%;
   padding: 5px;
-}
-
-.footer {
-  padding-left: 10px;
-  font-size: xx-small;
 }
