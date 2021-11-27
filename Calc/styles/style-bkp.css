@@ -37,10 +37,10 @@ li {
 }
 
 a {
-  color: rgba(0, 0, 0, 0.3);
+  color: rgba(0, 0, 0, 0.1);
   background-color: transparent;
   text-decoration: none;
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: 900;
 }
 
@@ -83,20 +83,35 @@ a:visited {
 
 .nav-menu,
 .links-menu {
+  display: flex;
   background-color: rgb(240, 240, 240);
   border-color: rgba(220, 220, 220, 0.5);
-  justify-self: stretch;
-  /* align-content: center; */
+
+  align-items: center;
+  padding-left: 15px;
 }
 
 .nav-menu {
   grid-area: menu;
   border-right-style: solid;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  margin: 50% 0%;
 }
 
 .links-menu {
   grid-area: link;
   border-left-style: solid;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  margin: 50% 0%;
+}
+
+.menu-sub {
+  display: block;
+  font-size: 1.2rem;
+  text-indent: 15px;
+  padding-top: 5px;
 }
 
 .ladder-calc-header {

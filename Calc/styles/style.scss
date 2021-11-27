@@ -1,0 +1,229 @@
+$bgColor: white;
+$textColor: rgba(0, 0, 0, 0.85);
+$textBGColor: transparent;
+$linkTxtColor: rgba(0, 0, 0, 0.1);
+$menuBGColor: rgb(240, 240, 240);
+$menuBorderColor: rgba(220, 220, 220, 0.5);
+$menuCornerRadius: 30px;
+$menuMargin: 50% 0%;
+$tabBorderBaseColor: rgba(255, 0, 0, 0.8);
+$tabHoverBGColor: rgba(255, 0, 0, 0.5);
+
+* {
+  background-color: $bgColor;
+  font-family: "Montserrat", sans-serif;
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+}
+
+h1,
+h2,
+p,
+nav,
+li {
+  color: $textColor;
+}
+
+h1 {
+  font-weight: bold;
+}
+
+h2 {
+  padding-top: 5px;
+}
+
+p,
+nav,
+li {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  word-spacing: 0.2rem;
+  background-color: $textBGColor;
+}
+
+li {
+  list-style-type: none;
+  line-height: 2;
+}
+
+a {
+  color: $linkTxtColor;
+  background-color: $textBGColor;
+  text-decoration: none;
+  font-size: 1.8rem;
+  font-weight: 900;
+
+  &:active {
+    color: default;
+  }
+
+  &:visited {
+    color: default;
+  }
+}
+
+.main-page {
+  background-color: rgba(240, 240, 240, 0.7);
+  display: grid;
+  height: auto;
+  grid-template-columns: 1fr 200px minmax(600px, 1000px) 200px 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    ". menu header link ."
+    ". menu info link ."
+    ". menu subhead link ."
+    ". menu tabs link ."
+    ". menu subcontent link ."
+    ". menu footer link .";
+
+  .ladder-calc-header {
+    grid-area: header;
+    padding: 10px 20px;
+  }
+
+  .ladder-calc-info {
+    grid-area: info;
+    padding: 0px 20px;
+  }
+
+  .ladder-calc-subhead {
+    grid-area: subhead;
+    padding: 30px 0px 0px 20px;
+  }
+
+  .ladder-calc-tabs {
+    grid-area: tabs;
+    padding-left: 20px;
+    display: flex;
+    align-content: flex-end;
+
+    .btn-tabs {
+      font-size: 100%;
+      padding: 7px;
+      margin: 15px 2px 5px;
+      background-color: transparent;
+      border-top-right-radius: 10px;
+      border-top-left-radius: 10px;
+      border-bottom: none;
+      transition: background-color 0.1s ease-in-out;
+
+      &:first-of-type {
+        margin-left: 0px;
+      }
+
+      &:nth-child(1) {
+        border-bottom: solid;
+        border-bottom-color: $tabBorderBaseColor;
+      }
+
+      &:hover {
+        background-color: $tabHoverBGColor;
+      }
+
+      &:active {
+        background-color: red;
+        transition: background-color 0s;
+      }
+    }
+  }
+}
+
+.ladder-calc-subcontent {
+  padding: 5px 20px 0px 20px;
+  grid-area: subcontent;
+  display: grid;
+  max-width: 100%;
+  height: auto;
+  grid-template-columns: 30% auto;
+  grid-template-rows: auto 30% auto;
+  grid-template-areas:
+    "subinfo subinfo"
+    "calc-result img"
+    "message img";
+
+  .subcontent-sub-info {
+    grid-area: subinfo;
+  }
+
+  .subcontent-calculator {
+    grid-area: calc-result;
+    place-self: start center;
+    padding-top: 30px;
+  }
+
+  .subcontent-calculator-btn {
+    padding-top: 10px;
+    text-align: center;
+  }
+
+  .subcontent-image {
+    grid-area: img;
+
+    .result-img {
+      max-width: 100%;
+      height: auto;
+      place-self: auto center;
+    }
+  }
+
+  .subcontent-message {
+    grid-area: message;
+    margin-top: 10px;
+    place-self: start center;
+  }
+
+  .input-field {
+    height: 1.5rem;
+    width: 200px;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+  }
+
+  .btn-calc {
+    font-size: 100%;
+    padding: 5px;
+  }
+}
+
+.nav-menu {
+  grid-area: menu;
+  //   border-right-style: solid;
+  border-top-left-radius: $menuCornerRadius;
+  border-bottom-left-radius: $menuCornerRadius;
+}
+
+.links-menu {
+  grid-area: link;
+  //   border-left-style: solid;
+  border-top-right-radius: $menuCornerRadius;
+  border-bottom-right-radius: $menuCornerRadius;
+}
+
+.nav-menu,
+.links-menu {
+  display: flex;
+  background-color: $menuBGColor;
+  border-color: $menuBorderColor;
+  align-items: center;
+  padding-left: 15px;
+  margin: $menuMargin;
+
+  .menu-sub,
+  .link-sub {
+    display: block;
+    font-size: 1.2rem;
+    text-indent: 15px;
+    padding-top: 5px;
+  }
+}
+
+.footer {
+  grid-area: footer;
+  justify-content: center start;
+
+  p {
+    padding-left: 10px;
+    font-size: 0.8rem;
+  }
+}
