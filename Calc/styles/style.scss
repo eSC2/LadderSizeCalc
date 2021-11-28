@@ -1,13 +1,17 @@
 $bgColor: white;
+$mainPageBGColor: rgba(0, 0, 0, 0.2);
 $textColor: rgba(0, 0, 0, 0.85);
 $textBGColor: transparent;
-$linkTxtColor: rgba(0, 0, 0, 0.1);
-$menuBGColor: rgb(240, 240, 240);
+$linkTxtColor: rgba(0, 0, 0, 0.3);
+$menuBGColor: white;
+// $menuBGColor: rgb(235, 235, 235);
 $menuBorderColor: rgba(220, 220, 220, 0.5);
-$menuCornerRadius: 30px;
+$menuCornerRadius: 20px;
 $menuMargin: 50% 0%;
 $tabBorderBaseColor: rgba(255, 0, 0, 0.8);
 $tabHoverBGColor: rgba(255, 0, 0, 0.5);
+$zIndexMainGrid: 2;
+$zIndexMenuGrid: 1;
 
 * {
   background-color: $bgColor;
@@ -15,13 +19,6 @@ $tabHoverBGColor: rgba(255, 0, 0, 0.5);
   padding: 0;
   margin: 0;
   line-height: 1;
-}
-
-h1,
-h2,
-p,
-nav,
-li {
   color: $textColor;
 }
 
@@ -36,7 +33,7 @@ h2 {
 p,
 nav,
 li {
-  font-size: 1.1rem;
+  font-size: 0.8rem;
   line-height: 1.6;
   word-spacing: 0.2rem;
   background-color: $textBGColor;
@@ -51,8 +48,8 @@ a {
   color: $linkTxtColor;
   background-color: $textBGColor;
   text-decoration: none;
-  font-size: 1.8rem;
-  font-weight: 900;
+  font-size: 1.2rem;
+  font-weight: 600;
 
   &:active {
     color: default;
@@ -64,32 +61,35 @@ a {
 }
 
 .main-page {
-  background-color: rgba(240, 240, 240, 0.7);
+  background-color: $mainPageBGColor;
   display: grid;
   height: auto;
-  grid-template-columns: 1fr 200px minmax(600px, 1000px) 200px 1fr;
+  grid-template-columns: 1fr 200px minmax(700px, 800px) 200px 1fr;
   grid-template-rows: auto;
   grid-template-areas:
-    ". menu header link ."
-    ". menu info link ."
-    ". menu subhead link ."
-    ". menu tabs link ."
-    ". menu subcontent link ."
-    ". menu footer link .";
+    ". navi header link ."
+    ". navi info link ."
+    ". navi subhead link ."
+    ". navi tabs link ."
+    ". navi subcontent link ."
+    ". navi footer link .";
 
   .ladder-calc-header {
     grid-area: header;
     padding: 10px 20px;
+    z-index: $zIndexMainGrid;
   }
 
   .ladder-calc-info {
     grid-area: info;
     padding: 0px 20px;
+    z-index: $zIndexMainGrid;
   }
 
   .ladder-calc-subhead {
     grid-area: subhead;
     padding: 30px 0px 0px 20px;
+    z-index: $zIndexMainGrid;
   }
 
   .ladder-calc-tabs {
@@ -97,15 +97,19 @@ a {
     padding-left: 20px;
     display: flex;
     align-content: flex-end;
+    z-index: $zIndexMainGrid;
 
     .btn-tabs {
-      font-size: 100%;
+      font-size: 0.9rem;
       padding: 7px;
       margin: 15px 2px 5px;
       background-color: transparent;
       border-top-right-radius: 10px;
       border-top-left-radius: 10px;
       border-bottom: none;
+      border-style: none;
+      border-top-style: solid;
+      border-right-style: solid;
       transition: background-color 0.1s ease-in-out;
 
       &:first-of-type {
@@ -132,6 +136,7 @@ a {
 .ladder-calc-subcontent {
   padding: 5px 20px 0px 20px;
   grid-area: subcontent;
+  z-index: $zIndexMainGrid;
   display: grid;
   max-width: 100%;
   height: auto;
@@ -175,7 +180,7 @@ a {
 
   .input-field {
     height: 1.5rem;
-    width: 200px;
+    width: 180px;
     margin-bottom: 10px;
     font-size: 1.2rem;
   }
@@ -187,33 +192,68 @@ a {
 }
 
 .nav-menu {
-  grid-area: menu;
-  //   border-right-style: solid;
+  grid-area: navi;
+  border-right-style: solid;
   border-top-left-radius: $menuCornerRadius;
   border-bottom-left-radius: $menuCornerRadius;
-}
-
-.links-menu {
-  grid-area: link;
-  //   border-left-style: solid;
-  border-top-right-radius: $menuCornerRadius;
-  border-bottom-right-radius: $menuCornerRadius;
-}
-
-.nav-menu,
-.links-menu {
+  z-index: $zIndexMenuGrid;
+  padding: 30px 15px;
+  position: relative;
+  height: fit-content;
+  top: 80px; // change value to slide vertically
+  left: 0px; // change value to slide horizontally
   display: flex;
   background-color: $menuBGColor;
   border-color: $menuBorderColor;
   align-items: center;
-  padding-left: 15px;
-  margin: $menuMargin;
+
+  .nav-arrow {
+    height: 30px;
+    background: transparent;
+    position: absolute;
+    right: 102%;
+  }
+}
+
+.links-menu {
+  grid-area: link;
+  border-left-style: solid;
+  border-top-right-radius: $menuCornerRadius;
+  border-bottom-right-radius: $menuCornerRadius;
+  z-index: $zIndexMenuGrid;
+  padding: 30px 15px;
+  position: relative;
+  height: fit-content;
+  top: 80px; // change value to slide vertically
+  left: 0px; // change value to slide horizontally
+  display: flex;
+  background-color: $menuBGColor;
+  border-color: $menuBorderColor;
+  align-items: center;
+
+  .link-arrow {
+    height: 30px;
+    background: transparent;
+    position: absolute;
+    left: 102%;
+    transform: rotate(180deg);
+  }
+}
+
+.nav-menu,
+.links-menu {
+  //   display: flex;
+  //   background-color: $menuBGColor;
+  //   border-color: $menuBorderColor;
+  //   align-items: center;
+  //   margin: $menuMargin;
 
   .menu-sub,
   .link-sub {
     display: block;
-    font-size: 1.2rem;
-    text-indent: 15px;
+    font-size: 0.9rem;
+    font-weight: 400;
+    text-indent: 20px;
     padding-top: 5px;
   }
 }
@@ -221,6 +261,7 @@ a {
 .footer {
   grid-area: footer;
   justify-content: center start;
+  z-index: $zIndexMainGrid;
 
   p {
     padding-left: 10px;
