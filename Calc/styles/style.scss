@@ -65,69 +65,77 @@ a {
   display: grid;
   height: auto;
   grid-template-columns: 1fr 200px minmax(700px, 800px) 200px 1fr;
-  grid-template-rows: auto;
   grid-template-areas:
-    ". navi header link ."
-    ". navi info link ."
-    ". navi subhead link ."
-    ". navi tabs link ."
-    ". navi subcontent link ."
+    ". navi main link ."
     ". navi footer link .";
 
-  .ladder-calc-header {
-    grid-area: header;
-    padding: 10px 20px;
-    z-index: $zIndexMainGrid;
-  }
+  .main-content {
+    grid-area: main;
+    display: grid;
+    height: auto;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "header"
+      "info"
+      "subhead"
+      "tabs"
+      "subcontent";
 
-  .ladder-calc-info {
-    grid-area: info;
-    padding: 0px 20px;
-    z-index: $zIndexMainGrid;
-  }
+    .ladder-calc-header {
+      grid-area: header;
+      padding: 10px 20px;
+      z-index: $zIndexMainGrid;
+    }
 
-  .ladder-calc-subhead {
-    grid-area: subhead;
-    padding: 30px 0px 0px 20px;
-    z-index: $zIndexMainGrid;
-  }
+    .ladder-calc-info {
+      grid-area: info;
+      padding: 0px 20px;
+      z-index: $zIndexMainGrid;
+    }
 
-  .ladder-calc-tabs {
-    grid-area: tabs;
-    padding-left: 20px;
-    display: flex;
-    align-content: flex-end;
-    z-index: $zIndexMainGrid;
+    .ladder-calc-subhead {
+      grid-area: subhead;
+      padding: 30px 0px 0px 20px;
+      z-index: $zIndexMainGrid;
+    }
 
-    .btn-tabs {
-      font-size: 0.9rem;
-      padding: 7px;
-      margin: 15px 2px 5px;
-      background-color: transparent;
-      border-top-right-radius: 10px;
-      border-top-left-radius: 10px;
-      border-bottom: none;
-      border-style: none;
-      border-top-style: solid;
-      border-right-style: solid;
-      transition: background-color 0.1s ease-in-out;
+    .ladder-calc-tabs {
+      grid-area: tabs;
+      padding-left: 20px;
+      display: flex;
+      align-content: flex-end;
+      z-index: $zIndexMainGrid;
 
-      &:first-of-type {
-        margin-left: 0px;
-      }
+      .btn-tabs {
+        font-size: 0.9rem;
+        padding: 7px;
+        margin: 15px 2px 5px;
+        background-color: transparent;
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
+        border-bottom: none;
+        border-style: none;
+        border-top-style: solid;
+        border-right-style: solid;
+        transition: background-color 0.1s ease-in-out;
 
-      &:nth-child(1) {
-        border-bottom: solid;
-        border-bottom-color: $tabBorderBaseColor;
-      }
+        &:first-of-type {
+          margin-left: 0px;
+        }
 
-      &:hover {
-        background-color: $tabHoverBGColor;
-      }
+        &:nth-child(1) {
+          border-bottom: solid;
+          border-bottom-color: $tabBorderBaseColor;
+        }
 
-      &:active {
-        background-color: red;
-        transition: background-color 0s;
+        &:hover {
+          background-color: $tabHoverBGColor;
+        }
+
+        &:active {
+          background-color: red;
+          transition: background-color 0s;
+        }
       }
     }
   }
@@ -182,13 +190,22 @@ a {
     height: 1.5rem;
     width: 180px;
     margin-bottom: 10px;
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 
   .btn-calc {
-    font-size: 100%;
+    font-size: 0.8rem;
     padding: 5px;
   }
+}
+
+.nav-arrow:hover {
+  cursor: pointer;
+}
+
+.nav-arrow {
+  background: transparent;
+  position: absolute;
 }
 
 .nav-menu {
@@ -208,10 +225,14 @@ a {
   align-items: center;
 
   .nav-arrow {
-    height: 30px;
-    background: transparent;
-    position: absolute;
     right: 102%;
+  }
+
+  .menu-arrow {
+    display: flex;
+    position: center;
+    background: transparent;
+    height: 30px;
   }
 }
 
@@ -231,40 +252,37 @@ a {
   border-color: $menuBorderColor;
   align-items: center;
 
-  .link-arrow {
-    height: 30px;
-    background: transparent;
-    position: absolute;
+  .nav-arrow {
     left: 102%;
+  }
+
+  .link-arrow {
+    display: flex;
+    position: center;
+    background: transparent;
+    height: 30px;
     transform: rotate(180deg);
   }
 }
 
-.nav-menu,
-.links-menu {
-  //   display: flex;
-  //   background-color: $menuBGColor;
-  //   border-color: $menuBorderColor;
-  //   align-items: center;
-  //   margin: $menuMargin;
-
-  .menu-sub,
-  .link-sub {
-    display: block;
-    font-size: 0.9rem;
-    font-weight: 400;
-    text-indent: 20px;
-    padding-top: 5px;
-  }
+.menu-sub,
+.link-sub {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 400;
+  // text-indent: 20px;
+  padding-left: 20px;
+  padding-top: 5px;
 }
 
 .footer {
   grid-area: footer;
+  display: flex;
   justify-content: center start;
   z-index: $zIndexMainGrid;
 
   p {
     padding-left: 10px;
-    font-size: 0.8rem;
+    font-size: 0.5rem;
   }
 }

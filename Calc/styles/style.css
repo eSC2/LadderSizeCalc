@@ -48,32 +48,38 @@ a:visited {
   display: grid;
   height: auto;
   grid-template-columns: 1fr 200px minmax(700px, 800px) 200px 1fr;
-  grid-template-rows: auto;
-  grid-template-areas: ". navi header link ." ". navi info link ." ". navi subhead link ." ". navi tabs link ." ". navi subcontent link ." ". navi footer link .";
+  grid-template-areas: ". navi main link ." ". navi footer link .";
 }
-.main-page .ladder-calc-header {
+.main-page .main-content {
+  grid-area: main;
+  display: grid;
+  height: auto;
+  grid-template-rows: auto;
+  grid-template-areas: "header" "info" "subhead" "tabs" "subcontent";
+}
+.main-page .main-content .ladder-calc-header {
   grid-area: header;
   padding: 10px 20px;
   z-index: 2;
 }
-.main-page .ladder-calc-info {
+.main-page .main-content .ladder-calc-info {
   grid-area: info;
   padding: 0px 20px;
   z-index: 2;
 }
-.main-page .ladder-calc-subhead {
+.main-page .main-content .ladder-calc-subhead {
   grid-area: subhead;
   padding: 30px 0px 0px 20px;
   z-index: 2;
 }
-.main-page .ladder-calc-tabs {
+.main-page .main-content .ladder-calc-tabs {
   grid-area: tabs;
   padding-left: 20px;
   display: flex;
   align-content: flex-end;
   z-index: 2;
 }
-.main-page .ladder-calc-tabs .btn-tabs {
+.main-page .main-content .ladder-calc-tabs .btn-tabs {
   font-size: 0.9rem;
   padding: 7px;
   margin: 15px 2px 5px;
@@ -86,17 +92,17 @@ a:visited {
   border-right-style: solid;
   transition: background-color 0.1s ease-in-out;
 }
-.main-page .ladder-calc-tabs .btn-tabs:first-of-type {
+.main-page .main-content .ladder-calc-tabs .btn-tabs:first-of-type {
   margin-left: 0px;
 }
-.main-page .ladder-calc-tabs .btn-tabs:nth-child(1) {
+.main-page .main-content .ladder-calc-tabs .btn-tabs:nth-child(1) {
   border-bottom: solid;
   border-bottom-color: rgba(255, 0, 0, 0.8);
 }
-.main-page .ladder-calc-tabs .btn-tabs:hover {
+.main-page .main-content .ladder-calc-tabs .btn-tabs:hover {
   background-color: rgba(255, 0, 0, 0.5);
 }
-.main-page .ladder-calc-tabs .btn-tabs:active {
+.main-page .main-content .ladder-calc-tabs .btn-tabs:active {
   background-color: red;
   transition: background-color 0s;
 }
@@ -141,11 +147,20 @@ a:visited {
   height: 1.5rem;
   width: 180px;
   margin-bottom: 10px;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 .ladder-calc-subcontent .btn-calc {
-  font-size: 100%;
+  font-size: 0.8rem;
   padding: 5px;
+}
+
+.nav-arrow:hover {
+  cursor: pointer;
+}
+
+.nav-arrow {
+  background: transparent;
+  position: absolute;
 }
 
 .nav-menu {
@@ -167,10 +182,13 @@ a:visited {
   align-items: center;
 }
 .nav-menu .nav-arrow {
-  height: 30px;
-  background: transparent;
-  position: absolute;
   right: 102%;
+}
+.nav-menu .menu-arrow {
+  display: flex;
+  position: center;
+  background: transparent;
+  height: 30px;
 }
 
 .links-menu {
@@ -191,31 +209,33 @@ a:visited {
   border-color: rgba(220, 220, 220, 0.5);
   align-items: center;
 }
-.links-menu .link-arrow {
-  height: 30px;
-  background: transparent;
-  position: absolute;
+.links-menu .nav-arrow {
   left: 102%;
+}
+.links-menu .link-arrow {
+  display: flex;
+  position: center;
+  background: transparent;
+  height: 30px;
   transform: rotate(180deg);
 }
 
-.nav-menu .menu-sub,
-.nav-menu .link-sub,
-.links-menu .menu-sub,
-.links-menu .link-sub {
+.menu-sub,
+.link-sub {
   display: block;
   font-size: 0.9rem;
   font-weight: 400;
-  text-indent: 20px;
+  padding-left: 20px;
   padding-top: 5px;
 }
 
 .footer {
   grid-area: footer;
+  display: flex;
   justify-content: center start;
   z-index: 2;
 }
 .footer p {
   padding-left: 10px;
-  font-size: 0.8rem;
+  font-size: 0.5rem;
 }/*# sourceMappingURL=style.css.map */

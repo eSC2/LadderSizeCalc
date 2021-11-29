@@ -11,7 +11,10 @@
 
   <body class="main-page">
     <div class="nav-menu">
-      <img class="nav-arrow" alt="image arrow" src="./src/img/arrow.png" />
+      <div class="nav-arrow">
+        <img class="menu-arrow" alt="image arrow" src="./src/img/arrow.png" />
+      </div>
+
       <nav class="nav-menu-btns">
         <a>Menu</a>
         <a class="menu-sub" href="#">Ladder Calculator</a>
@@ -28,61 +31,62 @@
       </nav>
     </div>
 
-    <header class="ladder-calc-header">
-      <h1>LADDER SIZE CALCULATOR</h1>
-      <h2>FOR HEIGHT SAFETY SYSTEM</h2>
-    </header>
+    <div class="main-content">
+      <header class="ladder-calc-header">
+        <h1>LADDER SIZE CALCULATOR</h1>
+        <h2>FOR HEIGHT SAFETY SYSTEM</h2>
+      </header>
 
-    <div class="ladder-calc-info">
-      <p>
-        This calculator provides a quick ladder size calculation in accordance to Australian Standard. Results given is for guidance only. This site is not liable for any losses, damages or compliance
-        issues that inccured in connection with its tools. Seeking professional advises and certification from certified height safety supplier is highly recommended.
-      </p>
-    </div>
-
-    <div class="ladder-calc-subhead">
-      <h2>CHOOSE LADDER TYPE</h2>
-    </div>
-
-    <div class="ladder-calc-tabs">
-      <button class="btn-tabs">RUNG LADDER</button>
-      <button class="btn-tabs">STEP LADDER</button>
-      <button class="btn-tabs">STAIR</button>
-    </div>
-
-    <div class="ladder-calc-subcontent">
-      <div class="subcontent-sub-info">
+      <div class="ladder-calc-info">
         <p>
-          A twin-stile rung ladder comprises of two stiles and rungs that assists user ascending/descending between levels. It is to be inclined between 70° and 90°, and can be both portable or
-          permanently fixed to a structure. The Australia Standard AS1657 sets out requirements for the design, selection, construction and installation of ladder and is to be strictly followed for
-          compliances. Please contact certified supplier/installer or refer to Australian Standard AS1657 for more information.
+          This calculator provides a quick ladder size calculation in accordance to Australian Standard. Results given is for guidance only. This site is not liable for any losses, damages or
+          compliance issues that inccured in connection with its tools. Seeking professional advises and certification from certified height safety supplier is highly recommended.
         </p>
-        <br />
-        <ul>
-          <li><strong>Vertical Height</strong> - Vertical measurement between levels (300mm - 6000mm)</li>
-          <li><strong>Ladder Width</strong> - Desired width of the ladder measuring between stiles (375mm - 525mm)</li>
-          <li><strong>Ladder Pitch</strong> - Desired slope of the ladder (70° - 90°)</li>
-        </ul>
       </div>
 
-      <div class="subcontent-calculator">
-        <p>Vertical Height</p>
-        <input class="input-field" vHeight />
-        <p>Ladder Width</p>
-        <input class="input-field" ladderWidth />
-        <p>Ladder Pitch</p>
-        <input class="input-field" ladderPitch />
-        <br />
-        <div class="subcontent-calculator-btn">
-          <button class="btn-calc">Calculate</button>
+      <div class="ladder-calc-subhead">
+        <h2>CHOOSE LADDER TYPE</h2>
+      </div>
+
+      <div class="ladder-calc-tabs">
+        <button class="btn-tabs">RUNG LADDER</button>
+        <button class="btn-tabs">STEP LADDER</button>
+        <button class="btn-tabs">STAIR</button>
+      </div>
+
+      <div class="ladder-calc-subcontent">
+        <div class="subcontent-sub-info">
+          <p>
+            A twin-stile rung ladder comprises of two stiles and rungs that assists user ascending/descending between levels. It is to be inclined between 70° and 90°, and can be both portable or
+            permanently fixed to a structure. The Australia Standard AS1657 sets out requirements for the design, selection, construction and installation of ladder and is to be strictly followed for
+            compliances. Please contact certified supplier/installer or refer to Australian Standard AS1657 for more information.
+          </p>
+          <br />
+          <ul>
+            <li><strong>Vertical Height</strong> - Vertical measurement between levels (300mm - 6000mm)</li>
+            <li><strong>Ladder Width</strong> - Desired width of the ladder measuring between stiles (375mm - 525mm)</li>
+            <li><strong>Ladder Pitch</strong> - Desired slope of the ladder (70° - 90°)</li>
+          </ul>
         </div>
-      </div>
 
-      <div class="subcontent-message">
-        <p>Error Message Container</p>
-      </div>
+        <div class="subcontent-calculator">
+          <p>Vertical Height</p>
+          <input class="input-field" vHeight />
+          <p>Ladder Width</p>
+          <input class="input-field" ladderWidth />
+          <p>Ladder Pitch</p>
+          <input class="input-field" ladderPitch />
+          <br />
+          <div class="subcontent-calculator-btn">
+            <button class="btn-calc">Calculate</button>
+          </div>
+        </div>
 
-      <!-- <div class="subcontent-result-rungladder">
+        <div class="subcontent-message">
+          <p>Error Message Container</p>
+        </div>
+
+        <!-- <div class="subcontent-result-rungladder">
           <li>
             <p>Vertical Height:</p>
             <p>Ladder Width:</p>
@@ -92,8 +96,9 @@
           <button class="btn-save">Save</button>
         </div> -->
 
-      <div class="subcontent-image">
-        <img class="result-img" src="./src/js/img/rungladderdwg.jpg" alt="Rung Ladder Drawing" />
+        <div class="subcontent-image">
+          <img class="result-img" src="./src/js/img/rungladderdwg.jpg" alt="Rung Ladder Drawing" />
+        </div>
       </div>
     </div>
 
@@ -109,7 +114,9 @@
         <a class="link-sub" href="#">Link G</a>
         <a class="link-sub" href="#">Link H</a>
       </nav>
-      <img class="nav-arrow link-arrow" alt="image arrow" src="./src/img/arrow.png" />
+      <div class="nav-arrow">
+        <img class="link-arrow" alt="image arrow" src="./src/img/arrow.png" />
+      </div>
     </div>
   </body>
 
