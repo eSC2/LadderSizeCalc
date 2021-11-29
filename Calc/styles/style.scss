@@ -4,7 +4,6 @@ $textColor: rgba(0, 0, 0, 0.85);
 $textBGColor: transparent;
 $linkTxtColor: rgba(0, 0, 0, 0.3);
 $menuBGColor: white;
-// $menuBGColor: rgb(235, 235, 235);
 $menuBorderColor: rgba(220, 220, 220, 0.5);
 $menuCornerRadius: 20px;
 $menuMargin: 50% 0%;
@@ -52,11 +51,11 @@ a {
   font-weight: 600;
 
   &:active {
-    color: default;
+    color: $linkTxtColor;
   }
 
   &:visited {
-    color: default;
+    color: $linkTxtColor;
   }
 }
 
@@ -265,13 +264,17 @@ a {
   }
 }
 
+.menu-link-container {
+  padding-left: 20px;
+}
+
 .menu-sub,
 .link-sub {
   display: block;
   font-size: 0.9rem;
   font-weight: 400;
   // text-indent: 20px;
-  padding-left: 20px;
+  // padding-left: 20px;
   padding-top: 5px;
 }
 

@@ -37,10 +37,10 @@ a {
   font-weight: 600;
 }
 a:active {
-  color: default;
+  color: rgba(0, 0, 0, 0.3);
 }
 a:visited {
-  color: default;
+  color: rgba(0, 0, 0, 0.3);
 }
 
 .main-page {
@@ -220,12 +220,15 @@ a:visited {
   transform: rotate(180deg);
 }
 
+.menu-link-container {
+  padding-left: 20px;
+}
+
 .menu-sub,
 .link-sub {
   display: block;
   font-size: 0.9rem;
   font-weight: 400;
-  padding-left: 20px;
   padding-top: 5px;
 }
 
