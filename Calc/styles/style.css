@@ -140,7 +140,7 @@ a:visited {
 }
 .ladder-calc-subcontent .subcontent-message {
   grid-area: message;
-  margin-top: 10px;
+  margin-top: 20px;
   place-self: start center;
 }
 .ladder-calc-subcontent .input-field {

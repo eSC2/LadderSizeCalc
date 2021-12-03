@@ -1,19 +1,19 @@
 <div class="subcontent-sub-info">
   <p>
-    A twin-stile rung ladder comprises of two stiles and rungs that assists user ascending/descending between levels. It is to be inclined between 70° and 90°, and can be both portable or permanently
-    fixed to a structure. The Australia Standard AS1657 sets out requirements for the design, selection, construction and installation of ladder and is to be strictly followed for compliances. Please
-    contact certified supplier/installer or refer to Australian Standard AS1657 for more information.
+    A stair, or stairway is one or more steps leading from floor to floor. It is considered the safer access solution comparing to rung and step ladder. A stair may include landing and/or handrail
+    depending on the requirement, and it is to be inclined between 20° and 45°. The Australia Standard AS1657 sets out requirements for the design, selection, construction and installation of stair
+    and is to be strictly followed for compliances. Please contact certified supplier/installer or refer to Australian Standard AS1657 for more information.
   </p>
   <br />
   <ul>
     <li>
-      <strong>Vertical Height</strong> - Vertical measurement between levels (300mm - 6000mm)
+      <strong>Vertical Height</strong> - Vertical measurement between levels
     </li>
     <li>
-      <strong>Ladder Width</strong> - Desired width of the ladder measuring between stiles (375mm - 525mm)
+      <strong>Stair Width</strong> - Desired width of the stair measuring between stiles (min 600mm)
     </li>
     <li>
-      <strong>Ladder Pitch</strong> - Desired slope of the ladder (70° - 90°)
+      <strong>Stair Pitch</strong> - Desired slope of the stair (20° - 45°)
     </li>
   </ul>
 </div>;

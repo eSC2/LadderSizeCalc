@@ -11,25 +11,7 @@ export default class View {
 */
 
 class viewCalc extends View {
-  _parentElement = document.querySelector(".container-calculator");
-
-  _calcRungLadder() {
-    return `
-    <div class="calc-rungladder">
-      <div class="calc-view">
-        <ul>
-          <li>Vertical Height</li>
-          <input class="input-field" vHeight />
-          <li>Ladder Width</li>
-          <input class="input-field" ladderWidth />
-          <li>Ladder Pitch</li>
-          <input class="input-field" ladderPitch />
-        </ul>
-        <button class="btn-calc">Calculate</button>
-      </div>
-    </div>
-    `;
-  }
+  _parentElement = document.querySelector(".ladder-calc-subcontent");
 
   // Get user input
   _getUserInput() {

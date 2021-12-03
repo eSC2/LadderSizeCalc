@@ -5,13 +5,39 @@
 export const infoDefault = "Default info Text Here (From helpers.js)";
 
 export const infoRungLadder = `
-<h3>Twin-Stile Rung-Type Ladders</h3>
-<p>A twin-stile rung ladder comprises of two stiles and rungs that assists user ascending/descending between levels. It is to be inclined between 70° and 90°, and can be both portable or permanently fixed to a structure. The Australia Standard AS1657 sets out requirements for the design, selection, construction and installation of ladder and is to be strictly followed for compliances. Please contact certified supplier/installer or visit Australian Standard AS1657 for more information.</p>
-<p>Note: The rung ladder calculator only serves as a reference for ladder construction. The author does NOT certify nor responsible for any compliance issues that may arise. Alway refer to a certified supplier for approval and certification.</p>
-<p><strong>Type in the following information and click "calculate":</strong></p>
-<p>Vertical Height - Vertical measurement between levels (300mm - 6000mm)</p>
-<p>Ladder Width - Desired width of the ladder measuring between stiles (375mm - 525mm)</p>
-<p>Ladder Pitch - Desired slope of the ladder (70° - 90°)
+<div class="subcontent-sub-info">
+  <p>
+    A twin-stile rung ladder comprises of two stiles and rungs that assists user ascending/descending between levels. It is to be inclined between 70° and 90°, and can be both portable or
+    permanently fixed to a structure. The Australia Standard AS1657 sets out requirements for the design, selection, construction and installation of ladder and is to be strictly followed for
+    compliances. Please contact certified supplier/installer or refer to Australian Standard AS1657 for more information.
+  </p>
+  <br />
+  <ul>
+    <li><strong>Vertical Height</strong> - Vertical measurement between levels (300mm - 6000mm)</li>
+    <li><strong>Ladder Width</strong> - Desired width of the ladder measuring between stiles (375mm - 525mm)</li>
+    <li><strong>Ladder Pitch</strong> - Desired slope of the ladder (70° - 90°)</li>
+  </ul>
+</div>
+
+<div class="subcontent-calculator">
+  <p>Vertical Height</p>
+  <input class="input-field" vHeight />
+  <p>Ladder Width</p>
+  <input class="input-field" ladderWidth />
+  <p>Ladder Pitch</p>
+  <input class="input-field" ladderPitch />
+  <br />
+  <div class="subcontent-calculator-btn">
+    <button class="btn-calc">Calculate</button>
+  </div>
+</div>
+
+<div class="subcontent-message">
+  </div>
+
+<div class="subcontent-image">
+  <img class="result-img" src="./src/js/img/rungladderdwg.jpg" alt="Rung Ladder Drawing" />
+</div>
 `;
 
 // Ladder Compliance to AS1657
@@ -21,3 +47,15 @@ export const ladderComplianceData = {
   ladderPitchRange: [70, 90], // Rung Ladder Min/Max Pitch
   maxRungSpc: 300, // Max rung spacing
 };
+
+/*
+<div class="subcontent-result-rungladder">
+  <li>
+    <p>Vertical Height:</p>
+    <p>Ladder Width:</p>
+    <p>Ladder Pitch:</p>
+  </li>
+  <button class="btn-back">Back</button>
+  <button class="btn-save">Save</button>
+</div>
+*/

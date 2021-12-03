@@ -2,16 +2,10 @@
 
 import View from "./view.js";
 
-/*
-export default class View {
-  _clear() {
-    this._parentElement.innerHTML = "";
-  }
-}
-*/
-
 class viewResult extends View {
-  _parentElement = document.querySelector(".result-table");
+  _getParentEl() {
+    this._parentElement = document.querySelector(".subcontent-message");
+  }
 
   _renderResult(data) {
     return `
@@ -20,14 +14,15 @@ class viewResult extends View {
         <li>Internal Width: ${data.ladderWidth}mm</li>
         <li>Ladder Pitch: ${data.ladderPitch}°</li>
         <br>
-        <li>Ladder Base Length: ${data.ladderBaseLength}mm:</li>
-        <li>Top Stile Length: ${data.topStileLength}mm:</li>
+        <li>Ladder Base Length: ${data.ladderBaseLength}mm</li>
+        <li>Top Stile Length: ${data.topStileLength}mm</li>
         <li>Rung Height: ${data.rungSpace}mm</li>
-        <li>Rung Quantity: ${data.rungQty} off:</li>
+        <li>Rung Quantity: ${data.rungQty} off</li>
         <br>
-        <li>Total Ladder Height: ${data.totalStileLength}mm:</li>
+        <li>Total Ladder Height: ${data.totalStileLength}mm</li>
     </ul>
-    <P>Note: All dimensions given are measured from center-line.</p>
+    <br />
+    <p style='font-size:9px;'><strong>Note</strong>: This is for guidance only. Always seek professional advices from certified height safety product supplier.</p>
     `;
   }
 

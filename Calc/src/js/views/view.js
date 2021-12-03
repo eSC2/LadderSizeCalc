@@ -8,6 +8,6 @@ export default class View {
   _renderData(data) {
     this._clear();
 
-    this._parentElement.insertAdjacentHTML("afterbegin", data);
+    this._parentElement.insertAdjacentHTML("afterbegin", data); //<---- Error
   }
 }

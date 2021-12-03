@@ -16,19 +16,17 @@ const calculateLadder = function () {
 const renderResult = function (data) {
   viewCalc._clearInputField();
   viewResult._renderData(viewResult._renderResult(data));
-  viewMaterials._renderData(viewMaterials._renderMaterials(data));
+  // viewMaterials._renderData(viewMaterials._renderMaterials(data));
 };
 
 const renderError = function () {
-  viewCalc._clearInputField();
+  // viewCalc._clearInputField();
   viewResult._renderData(viewResult._renderError());
-  console.log("Input Error. Please Try Again");
 };
 
 const init = function () {
   viewInfo._renderData(viewInfo._generateInfoDefault());
-
-  viewCalc._renderData(viewCalc._calcRungLadder());
+  viewResult._getParentEl();
   viewCalc.addHandlerCalculate(calculateLadder);
 };
 

@@ -12,7 +12,7 @@ export default class View {
 */
 
 class viewInfo extends View {
-  _parentElement = document.querySelector(".info-view");
+  _parentElement = document.querySelector(".ladder-calc-subcontent");
 
   _generateInfoDefault() {
     return `    
