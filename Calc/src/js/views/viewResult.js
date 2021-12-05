@@ -4,7 +4,7 @@ import View from "./view.js";
 
 class viewResult extends View {
   _getParentEl() {
-    this._parentElement = document.querySelector(".subcontent-message");
+    this._parentElement = document.querySelector(".subcontent-calculator");
   }
 
   _renderResult(data) {
@@ -23,12 +23,19 @@ class viewResult extends View {
     </ul>
     <br />
     <p style='font-size:9px;'><strong>Note</strong>: This is for guidance only. Always seek professional advices from certified height safety product supplier.</p>
+    <br />
+    <br />
+    <div class="result-btn">
+      <button class="btn-back">Back</button>
+      <button class="btn-save">Save</button>
+    </div>
     `;
   }
 
   _renderError() {
     return `
     <p>Input Error.. Please follow the guideline above and try again..</p>
+    
     `;
   }
 }

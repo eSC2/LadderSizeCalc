@@ -26,7 +26,7 @@ const renderError = function () {
 
 const init = function () {
   viewInfo._renderData(viewInfo._generateInfoDefault());
-  viewResult._getParentEl();
+  // viewResult._getParentEl();
   viewCalc.addHandlerCalculate(calculateLadder);
 };
 

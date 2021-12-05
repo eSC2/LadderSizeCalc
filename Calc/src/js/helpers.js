@@ -19,7 +19,7 @@ export const infoRungLadder = `
   </ul>
 </div>
 
-<div class="subcontent-calculator">
+<div class="subcontent-calc_result">
   <p>Vertical Height</p>
   <input class="input-field" vHeight />
   <p>Ladder Width</p>
@@ -33,6 +33,7 @@ export const infoRungLadder = `
 </div>
 
 <div class="subcontent-message">
+
   </div>
 
 <div class="subcontent-image">

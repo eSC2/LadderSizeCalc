@@ -121,7 +121,7 @@ a:visited {
 .ladder-calc-subcontent .subcontent-sub-info {
   grid-area: subinfo;
 }
-.ladder-calc-subcontent .subcontent-calculator {
+.ladder-calc-subcontent .subcontent-calc_result {
   grid-area: calc-result;
   place-self: start center;
   padding-top: 30px;
@@ -149,9 +149,28 @@ a:visited {
   margin-bottom: 10px;
   font-size: 1rem;
 }
-.ladder-calc-subcontent .btn-calc {
+
+.btn-calc,
+.btn-back,
+.btn-save {
   font-size: 0.8rem;
   padding: 5px;
+}
+
+.result-btn {
+  display: block;
+  position: relative;
+  text-align: center;
+}
+.result-btn .btn-back {
+  margin-right: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.result-btn .btn-save {
+  margin-left: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .nav-arrow:hover {

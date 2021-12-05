@@ -158,7 +158,7 @@ a {
     grid-area: subinfo;
   }
 
-  .subcontent-calculator {
+  .subcontent-calc_result {
     grid-area: calc-result;
     place-self: start center;
     padding-top: 30px;
@@ -191,10 +191,30 @@ a {
     margin-bottom: 10px;
     font-size: 1rem;
   }
+}
 
-  .btn-calc {
-    font-size: 0.8rem;
-    padding: 5px;
+.btn-calc,
+.btn-back,
+.btn-save {
+  font-size: 0.8rem;
+  padding: 5px;
+}
+
+.result-btn {
+  display: block;
+  position: relative;
+  text-align: center;
+
+  .btn-back {
+    margin-right: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .btn-save {
+    margin-left: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }
 
