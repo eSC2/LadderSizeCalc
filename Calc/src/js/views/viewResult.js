@@ -3,9 +3,7 @@
 import View from "./view.js";
 
 class viewResult extends View {
-  _getParentEl() {
-    this._parentElement = document.querySelector(".subcontent-calculator");
-  }
+  _parentElement = document.querySelector(".subcontent-calculator");
 
   _renderResult(data) {
     return `
@@ -33,9 +31,14 @@ class viewResult extends View {
   }
 
   _renderError() {
+    this._parentElement = document.querySelector(".subcontent-message");
+
+    // const getInputStyle = document.querySelector(".input-field");
+
+    // getInputStyle.style.color = "rgba(0, 0, 0, 0.35)";
+
     return `
-    <p>Input Error.. Please follow the guideline above and try again..</p>
-    
+    <p>Input Error.. Please follow the guidelines above and try again..</p>
     `;
   }
 }

@@ -20,7 +20,7 @@ const renderResult = function (data) {
 };
 
 const renderError = function () {
-  // viewCalc._clearInputField();
+  viewCalc._inputTextErrColor();
   viewResult._renderData(viewResult._renderError());
 };
 
@@ -28,6 +28,7 @@ const init = function () {
   viewInfo._renderData(viewInfo._generateInfoDefault());
   // viewResult._getParentEl();
   viewCalc.addHandlerCalculate(calculateLadder);
+  viewCalc.stdInputFieldColor();
 };
 
 init();

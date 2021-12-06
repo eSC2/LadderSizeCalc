@@ -33,8 +33,8 @@ export const infoRungLadder = `
 </div>
 
 <div class="subcontent-message">
-
-  </div>
+  <p>Error Message Container</p>
+</div>
 
 <div class="subcontent-image">
   <img class="result-img" src="./src/js/img/rungladderdwg.jpg" alt="Rung Ladder Drawing" />

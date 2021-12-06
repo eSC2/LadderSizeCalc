@@ -183,6 +183,7 @@ a {
     grid-area: message;
     margin-top: 20px;
     place-self: start center;
+    text-align: center;
   }
 
   .input-field {
@@ -190,6 +191,7 @@ a {
     width: 180px;
     margin-bottom: 10px;
     font-size: 1rem;
+    color: $textColor;
   }
 }
 

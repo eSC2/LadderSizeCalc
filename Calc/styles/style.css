@@ -142,12 +142,14 @@ a:visited {
   grid-area: message;
   margin-top: 20px;
   place-self: start center;
+  text-align: center;
 }
 .ladder-calc-subcontent .input-field {
   height: 1.5rem;
   width: 180px;
   margin-bottom: 10px;
   font-size: 1rem;
+  color: rgba(0, 0, 0, 0.85);
 }
 
 .btn-calc,
