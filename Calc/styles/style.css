@@ -114,8 +114,8 @@ a:visited {
   display: grid;
   max-width: 100%;
   height: auto;
-  grid-template-columns: 30% auto;
-  grid-template-rows: auto 30% auto;
+  grid-template-columns: 35% auto;
+  grid-template-rows: auto auto 25%;
   grid-template-areas: "subinfo subinfo" "calc-result img" "message img";
 }
 .ladder-calc-subcontent .subcontent-sub-info {
@@ -124,7 +124,8 @@ a:visited {
 .ladder-calc-subcontent .subcontent-calc_result {
   grid-area: calc-result;
   place-self: start center;
-  padding-top: 30px;
+  padding-top: 25px;
+  padding-left: 0px;
 }
 .ladder-calc-subcontent .subcontent-calculator-btn {
   padding-top: 10px;
@@ -132,24 +133,28 @@ a:visited {
 }
 .ladder-calc-subcontent .subcontent-image {
   grid-area: img;
+  padding-right: 15px;
 }
 .ladder-calc-subcontent .subcontent-image .result-img {
   max-width: 100%;
   height: auto;
   place-self: auto center;
 }
-.ladder-calc-subcontent .subcontent-message {
+.ladder-calc-subcontent .subcontent-error-message {
   grid-area: message;
-  margin-top: 20px;
   place-self: start center;
   text-align: center;
 }
+.ladder-calc-subcontent .subcontent-error-message p {
+  color: red;
+}
 .ladder-calc-subcontent .input-field {
   height: 1.5rem;
-  width: 180px;
+  width: 150px;
   margin-bottom: 10px;
   font-size: 1rem;
   color: rgba(0, 0, 0, 0.85);
+  padding-left: 2px;
 }
 
 .btn-calc,

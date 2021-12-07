@@ -4,6 +4,19 @@
 
 export const infoDefault = "Default info Text Here (From helpers.js)";
 
+export const infoCalculator = `
+  <p>Vertical Height</p>
+  <input class="input-field" vHeight/>
+  <p>Ladder Width</p>
+  <input class="input-field" ladderWidth/>
+  <p>Ladder Pitch</p>
+  <input class="input-field" ladderPitch/>
+  <br />
+  <div class="subcontent-calculator-btn">
+    <button class="btn-calc">Calculate</button>
+  </div>
+`;
+
 export const infoRungLadder = `
 <div class="subcontent-sub-info">
   <p>
@@ -20,21 +33,10 @@ export const infoRungLadder = `
 </div>
 
 <div class="subcontent-calc_result">
-  <p>Vertical Height</p>
-  <input class="input-field" vHeight />
-  <p>Ladder Width</p>
-  <input class="input-field" ladderWidth />
-  <p>Ladder Pitch</p>
-  <input class="input-field" ladderPitch />
-  <br />
-  <div class="subcontent-calculator-btn">
-    <button class="btn-calc">Calculate</button>
-  </div>
+${infoCalculator}
 </div>
 
-<div class="subcontent-message">
-  <p>Error Message Container</p>
-</div>
+<div class="subcontent-error-message"></div>
 
 <div class="subcontent-image">
   <img class="result-img" src="./src/js/img/rungladderdwg.jpg" alt="Rung Ladder Drawing" />
@@ -48,15 +50,3 @@ export const ladderComplianceData = {
   ladderPitchRange: [70, 90], // Rung Ladder Min/Max Pitch
   maxRungSpc: 300, // Max rung spacing
 };
-
-/*
-<div class="subcontent-result-rungladder">
-  <li>
-    <p>Vertical Height:</p>
-    <p>Ladder Width:</p>
-    <p>Ladder Pitch:</p>
-  </li>
-  <button class="btn-back">Back</button>
-  <button class="btn-save">Save</button>
-</div>
-*/

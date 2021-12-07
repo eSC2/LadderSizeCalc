@@ -14,15 +14,9 @@ export default class View {
 class viewInfo extends View {
   _parentElement = document.querySelector(".ladder-calc-subcontent");
 
-  _generateInfoDefault() {
-    return `    
-      ${infoText.infoRungLadder}
-      `;
-  }
-
   _generateInfoLadder() {
     return `    
-      <h4>${infoText.infoRungLadder}</h4>
+      ${infoText.infoRungLadder}
       `;
   }
 }

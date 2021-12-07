@@ -5,7 +5,17 @@ import View from "./view.js";
 class viewResult extends View {
   _parentElement = document.querySelector(".subcontent-calculator");
 
+  _getSubContentEl() {
+    return document.querySelector(".subcontent-calc_result");
+  }
+
+  _getSubConMessageEl() {
+    return document.querySelector(".subcontent-error-message");
+  }
+
   _renderResult(data) {
+    this._parentElement = this._getSubContentEl();
+
     return `
     <ul>
         <li>Vertical Height: ${data.verticalHeight}mm</li>
@@ -20,7 +30,7 @@ class viewResult extends View {
         <li>Total Ladder Height: ${data.totalStileLength}mm</li>
     </ul>
     <br />
-    <p style='font-size:9px;'><strong>Note</strong>: This is for guidance only. Always seek professional advices from certified height safety product supplier.</p>
+    <p style='font-size:9px;'><strong>Note</strong>: Result is for guidance only. Always seek professional advices from certified height safety product supplier.</p>
     <br />
     <br />
     <div class="result-btn">
@@ -31,15 +41,25 @@ class viewResult extends View {
   }
 
   _renderError() {
-    this._parentElement = document.querySelector(".subcontent-message");
-
-    // const getInputStyle = document.querySelector(".input-field");
-
-    // getInputStyle.style.color = "rgba(0, 0, 0, 0.35)";
+    this._parentElement = this._getSubConMessageEl();
 
     return `
     <p>Input Error.. Please follow the guidelines above and try again..</p>
     `;
+  }
+
+  _clearError() {
+    this._parentElement = this._getSubConMessageEl();
+
+    return "";
+  }
+
+  addHandlerBack(handler) {
+    const btnBack = document.querySelector(".btn-back");
+
+    btnBack.addEventListener("click", function () {
+      handler();
+    });
   }
 }
 

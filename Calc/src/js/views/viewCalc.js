@@ -1,6 +1,7 @@
 "use strict";
 
 import View from "./view.js";
+import * as infoText from "../helpers.js";
 
 /*
 export default class View {
@@ -15,11 +16,17 @@ class viewCalc extends View {
 
   // Get user input
   _getUserInput() {
-    return this._parentElement.querySelectorAll(".input-field");
+    return document.querySelectorAll(".input-field");
+  }
+
+  _getCalcResEl() {
+    return document.querySelector(".subcontent-calc_result");
   }
 
   _clearInputField() {
-    this._parentElement.querySelectorAll(".input-field").forEach((el) => (el.value = ""));
+    const inputField = this._getUserInput();
+
+    inputField.forEach((el) => (el.value = ""));
   }
 
   _inputTextErrColor() {
@@ -40,6 +47,14 @@ class viewCalc extends View {
         }
       });
     });
+  }
+
+  _renderCalculator() {
+    this._parentElement = this._getCalcResEl();
+
+    return `
+    ${infoText.infoCalculator}
+    `;
   }
 
   addHandlerCalculate(handler) {
