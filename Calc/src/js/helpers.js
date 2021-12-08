@@ -5,12 +5,14 @@
 export const infoDefault = "Default info Text Here (From helpers.js)";
 
 export const infoCalculator = `
+<div class='subcontent-inputFields'>
   <p>Vertical Height</p>
   <input class="input-field" vHeight/>
   <p>Ladder Width</p>
   <input class="input-field" ladderWidth/>
   <p>Ladder Pitch</p>
   <input class="input-field" ladderPitch/>
+  </div>
   <br />
   <div class="subcontent-calculator-btn">
     <button class="btn-calc">Calculate</button>

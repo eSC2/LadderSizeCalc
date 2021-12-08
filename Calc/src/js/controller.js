@@ -24,6 +24,7 @@ const renderResult = function (data) {
   viewCalc._clearInputField();
   viewResult._renderData(viewResult._renderResult(data));
   viewResult.addHandlerBack(renderLadderCalc);
+  viewResult.addHandlerSave(printResult);
   // viewMaterials._renderData(viewMaterials._renderMaterials(data));
 };
 
@@ -40,3 +41,18 @@ const init = function () {
 };
 
 init();
+
+///////////////////
+
+const printResult = function (data) {
+  const printArea = window.open();
+
+  // printArea.document.body.innerHTML += data.innerHTML;
+
+  printArea.document.write('<link rel="stylesheet" href="./styles/printStyle.css" />');
+  printArea.document.write(data.innerHTML);
+  // printArea.print();
+  // printArea.close();
+
+  // window.print();
+};
