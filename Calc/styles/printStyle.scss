@@ -1,16 +1,6 @@
 $bgColor: white;
-$mainPageBGColor: rgba(0, 0, 0, 0.2);
 $textColor: rgba(0, 0, 0, 0.85);
 $textBGColor: transparent;
-$linkTxtColor: rgba(0, 0, 0, 0.3);
-$menuBGColor: white;
-$menuBorderColor: rgba(220, 220, 220, 0.5);
-$menuCornerRadius: 20px;
-$menuMargin: 50% 0%;
-$tabBorderBaseColor: rgba(255, 0, 0, 0.8);
-$tabHoverBGColor: rgba(255, 0, 0, 0.5);
-$zIndexMainGrid: 2;
-$zIndexMenuGrid: 1;
 
 * {
   background-color: $bgColor;
@@ -21,16 +11,7 @@ $zIndexMenuGrid: 1;
   color: $textColor;
 }
 
-h1 {
-  font-weight: bold;
-}
-
-h2 {
-  padding-top: 5px;
-}
-
 p,
-nav,
 li {
   font-size: 0.8rem;
   line-height: 1.6;
@@ -43,289 +24,44 @@ li {
   line-height: 2;
 }
 
-a {
-  color: $linkTxtColor;
-  background-color: $textBGColor;
-  text-decoration: none;
-  font-size: 1.2rem;
-  font-weight: 600;
-
-  &:active {
-    color: $linkTxtColor;
-  }
-
-  &:visited {
-    color: $linkTxtColor;
-  }
-}
-
-.main-page {
-  background-color: $mainPageBGColor;
+body {
   display: grid;
-  height: auto;
-  grid-template-columns: 1fr 200px minmax(700px, 800px) 200px 1fr;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: 1fr 6fr;
   grid-template-areas:
-    ". navi main link ."
-    ". navi footer link .";
-
-  .main-content {
-    grid-area: main;
-    display: grid;
-    height: auto;
-    grid-template-rows: auto;
-    grid-template-areas:
-      "header"
-      "info"
-      "subhead"
-      "tabs"
-      "subcontent";
-
-    .ladder-calc-header {
-      grid-area: header;
-      padding: 10px 20px;
-      z-index: $zIndexMainGrid;
-    }
-
-    .ladder-calc-info {
-      grid-area: info;
-      padding: 0px 20px;
-      z-index: $zIndexMainGrid;
-    }
-
-    .ladder-calc-subhead {
-      grid-area: subhead;
-      padding: 30px 0px 0px 20px;
-      z-index: $zIndexMainGrid;
-    }
-
-    .ladder-calc-tabs {
-      grid-area: tabs;
-      padding-left: 20px;
-      display: flex;
-      align-content: flex-end;
-      z-index: $zIndexMainGrid;
-
-      .btn-tabs {
-        font-size: 0.9rem;
-        padding: 7px;
-        margin: 15px 2px 5px;
-        background-color: transparent;
-        border-top-right-radius: 10px;
-        border-top-left-radius: 10px;
-        border-bottom: none;
-        border-style: none;
-        border-top-style: solid;
-        border-right-style: solid;
-        transition: background-color 0.1s ease-in-out;
-
-        &:first-of-type {
-          margin-left: 0px;
-        }
-
-        &:nth-child(1) {
-          border-bottom: solid;
-          border-bottom-color: $tabBorderBaseColor;
-        }
-
-        &:hover {
-          background-color: $tabHoverBGColor;
-        }
-
-        &:active {
-          background-color: red;
-          transition: background-color 0s;
-        }
-      }
-    }
-  }
-}
-
-.ladder-calc-subcontent {
-  padding: 5px 20px 0px 20px;
-  grid-area: subcontent;
-  z-index: $zIndexMainGrid;
-  display: grid;
-  max-width: 100%;
-  height: auto;
-  grid-template-columns: 35% auto;
-  grid-template-rows: auto;
-  grid-template-areas:
-    "subinfo subinfo"
-    "calc-result img"
-    "message img";
+    "title img"
+    "result img";
 
   .subcontent-sub-info {
-    grid-area: subinfo;
+    display: none;
   }
 
-  .subcontent-calc_result {
-    grid-area: calc-result;
-    display: block;
-    place-self: start center;
-
-    .subcontent-inputFields {
-      padding-top: 25px;
-
-      .input-field {
-        height: 1.5rem;
-        width: 160px;
-        margin-bottom: 10px;
-        font-size: 1rem;
-        color: $textColor;
-        padding-left: 2px;
-      }
-    }
-
-    .subcontent-result {
-      ul {
-        padding: 25px 0px 0px 20px;
-      }
-
-      p {
-        font-size: 9px;
-        padding-left: 10px;
-      }
-    }
+  .subcontent-print_title {
+    grid-area: title;
+    display: flex;
+    align-self: center;
+    margin-left: 10px;
   }
 
-  .subcontent-calculator-btn {
-    padding-top: 10px;
-    text-align: center;
+  .subcontent-result {
+    grid-area: result;
+    margin-left: 10px;
+  }
+
+  .result-btn {
+    display: none;
   }
 
   .subcontent-image {
     grid-area: img;
-    padding-right: 15px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
 
     .result-img {
-      max-width: 100%;
+      width: 75%;
       height: auto;
-      place-self: center;
+      object-fit: contain;
     }
-  }
-
-  .subcontent-error-message {
-    grid-area: message;
-    place-self: start center;
-    text-align: center;
-
-    p {
-      color: red;
-    }
-  }
-}
-
-.btn-calc,
-.btn-back,
-.btn-save {
-  font-size: 0.8rem;
-  padding: 5px;
-}
-
-.result-btn {
-  display: block;
-  position: relative;
-  text-align: center;
-
-  .btn-back {
-    margin-right: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-
-  .btn-save {
-    margin-left: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-}
-
-.nav-arrow:hover {
-  cursor: pointer;
-}
-
-.nav-arrow {
-  background: transparent;
-  position: absolute;
-}
-
-.nav-menu {
-  grid-area: navi;
-  border-right-style: solid;
-  border-top-left-radius: $menuCornerRadius;
-  border-bottom-left-radius: $menuCornerRadius;
-  z-index: $zIndexMenuGrid;
-  padding: 30px 15px;
-  position: relative;
-  height: fit-content;
-  top: 80px; // change value to slide vertically
-  left: 0px; // change value to slide horizontally
-  display: flex;
-  background-color: $menuBGColor;
-  border-color: $menuBorderColor;
-  align-items: center;
-
-  .nav-arrow {
-    right: 102%;
-  }
-
-  .menu-arrow {
-    display: flex;
-    position: center;
-    background: transparent;
-    height: 30px;
-  }
-}
-
-.links-menu {
-  grid-area: link;
-  border-left-style: solid;
-  border-top-right-radius: $menuCornerRadius;
-  border-bottom-right-radius: $menuCornerRadius;
-  z-index: $zIndexMenuGrid;
-  padding: 30px 15px;
-  position: relative;
-  height: fit-content;
-  top: 80px; // change value to slide vertically
-  left: 0px; // change value to slide horizontally
-  display: flex;
-  background-color: $menuBGColor;
-  border-color: $menuBorderColor;
-  align-items: center;
-
-  .nav-arrow {
-    left: 102%;
-  }
-
-  .link-arrow {
-    display: flex;
-    position: center;
-    background: transparent;
-    height: 30px;
-    transform: rotate(180deg);
-  }
-}
-
-.menu-link-container {
-  padding-left: 20px;
-}
-
-.menu-sub,
-.link-sub {
-  display: block;
-  font-size: 0.9rem;
-  font-weight: 400;
-  padding-top: 5px;
-}
-
-.footer {
-  grid-area: footer;
-  display: flex;
-  justify-content: center start;
-  z-index: $zIndexMainGrid;
-
-  p {
-    padding-left: 10px;
-    font-size: 0.5rem;
   }
 }
