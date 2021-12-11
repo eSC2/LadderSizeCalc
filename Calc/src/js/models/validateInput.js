@@ -8,7 +8,7 @@ export const chkComplianceFunc = function () {};
 export const chkEmptyInput = function (data, error) {
   const inputData = Array.from(data).map((el) => +el.value);
 
-  return inputData.includes(0) ? error() : inputData;
+  return inputData.includes(0) || inputData.includes(NaN) ? error() : inputData;
 };
 
 // Check whether input complies to complianceData

@@ -35,6 +35,14 @@ class viewCalc extends View {
     inputField.forEach((el) => (el.style.color = "red"));
   }
 
+  _renderCalculator() {
+    this._parentElement = this._getCalcResEl();
+
+    return `
+    ${infoText.infoCalculator}
+    `;
+  }
+
   stdInputFieldColor() {
     const inputField = this._getUserInput();
 
@@ -49,19 +57,21 @@ class viewCalc extends View {
     });
   }
 
-  _renderCalculator() {
-    this._parentElement = this._getCalcResEl();
-
-    return `
-    ${infoText.infoCalculator}
-    `;
-  }
-
   addHandlerCalculate(handler) {
     const btnCalc = document.querySelector(".btn-calc");
 
     btnCalc.addEventListener("click", function () {
       handler();
+    });
+  }
+
+  addHandlerCalcEnter(handler) {
+    const inputField = this._getUserInput();
+
+    inputField.forEach(function (el) {
+      el.addEventListener("keypress", function (e) {
+        if (e.key === "Enter") handler();
+      });
     });
   }
 }
