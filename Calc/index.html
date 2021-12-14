@@ -51,13 +51,13 @@
       </div>
 
       <div class="ladder-calc-tabs">
-        <button class="btn-tabs">RUNG LADDER</button>
-        <button class="btn-tabs">STEP LADDER</button>
-        <button class="btn-tabs">STAIR</button>
+        <button class="btn-tabs active-tab" id="1">RUNG LADDER</button>
+        <button class="btn-tabs" id="2">STEP LADDER</button>
+        <button class="btn-tabs" id="3">STAIR</button>
       </div>
 
       <div class="ladder-calc-subcontent">
-        <!-- <div class="subcontent-sub-info">
+        <div class="subcontent-sub-info tab1">
           <p>
             A twin-stile rung ladder comprises of two stiles and rungs that assists user ascending/descending between levels. It is to be inclined between 70° and 90°, and can be both portable or
             permanently fixed to a structure. The Australia Standard AS1657 sets out requirements for the design, selection, construction and installation of ladder and is to be strictly followed for
@@ -69,16 +69,46 @@
             <li><strong>Ladder Width</strong> - Desired width of the ladder measuring between stiles (375mm - 525mm)</li>
             <li><strong>Ladder Pitch</strong> - Desired slope of the ladder (70° - 90°)</li>
           </ul>
-        </div> -->
+        </div>
 
-        <!-- <div class="subcontent-calc_result">
-          <div class='inputFields'>
-          <p>Vertical Height</p>
-          <input class="input-field" vHeight />
-          <p>Ladder Width</p>
-          <input class="input-field" ladderWidth />
-          <p>Ladder Pitch</p>
-          <input class="input-field" ladderPitch />
+        <div class="subcontent-sub-info tab2">
+          <p>
+            A step ladder is similar to rung ladder where it comprises of two stiles and flat steps that assists user ascending/descending between levels, contra to round rungs. It is to be inclined
+            between 60° and 70°, and can only be permanently fixed to a structure. The Australia Standard AS1657 sets out requirements for the design, selection, construction and installation of
+            ladder and is to be strictly followed for compliances. Please contact certified supplier/installer or refer to Australian Standard AS1657 for more information.
+          </p>
+          <br />
+          <ul>
+            <li><strong>Vertical Height</strong> - Vertical measurement between levels (300mm - 6000mm)</li>
+            <li><strong>Ladder Width</strong> - Desired width of the ladder measuring between stiles (450mm - 750mm)</li>
+            <li><strong>Ladder Pitch</strong> - Desired slope of the ladder (60° - 70°)</li>
+            <li><strong>Handrail Clearance</strong> - Width measuring between handrails (550mm - 750mm)</li>
+          </ul>
+        </div>
+
+        <div class="subcontent-sub-info tab3">
+          <p>
+            A stair, stairway or staircase is a permanent structure designed to connect large vertical distance between level, by dividing it into steps with equal limited vertical distances. A stair
+            is considered safer and provides safer access comparing to rung and step ladder, but it also requires larger area due to its structure. It has a slope between 20° to 45° with a preferred
+            range within 30° to 38°<strong>*</strong>, as well as additional requirements listed below. The Australia Standard AS1657 sets out requirements for the design, selection, construction and
+            installation of stair and is to be strictly followed for compliances. Please contact certified supplier/installer or refer to Australian Standard AS1657 for more information.
+          </p>
+          <br />
+          <ul>
+            <li><strong>Vertical Height</strong> - Vertical measurement between levels (300mm - 4000mm)</li>
+            <li><strong>Stair Width</strong> - Desired width of the stair measuring between stiles (min 600mm)</li>
+            <li><strong>Stair Slope</strong> - Desired slope of the stair (30° - 38°)<strong>*</strong></li>
+          </ul>
+        </div>
+
+        <div class="subcontent-calc_result">
+          <div class="subcontent-inputFields">
+            <p>Vertical Height</p>
+            <input class="input-field" vHeight />
+            <p>Ladder Width</p>
+            <input class="input-field" ladderWidth />
+            <p>Ladder Pitch</p>
+            <input class="input-field" ladderPitch />
           </div>
           <br />
           <div class="subcontent-calculator-btn">
@@ -86,25 +116,11 @@
           </div>
         </div>
 
-        <div class="subcontent-message">
-          <p>Error Message Container</p>
-        </div> -->
+        <div class="subcontent-error-message"></div>
 
-        <!-- <div class="subcontent-result-rungladder">
-          <li>
-            <p>Vertical Height:</p>
-            <p>Ladder Width:</p>
-            <p>Ladder Pitch:</p>
-          </li>
-          <div class="result-btn">
-            <button class="btn-back">Back</button>
-            <button class="btn-save">Save</button>
-          </div>
-        </div> -->
-
-        <!-- <div class="subcontent-image">
-          <img class="result-img" src="./src/js/img/rungladderdwg.jpg" alt="Rung Ladder Drawing" />
-        </div> -->
+        <div class="subcontent-image">
+          <img class="result-img" src="./src/js/img/ladderdwg1.jpg" alt="Rung Ladder Drawing" />
+        </div>
       </div>
     </div>
 

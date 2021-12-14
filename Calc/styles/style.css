@@ -95,16 +95,16 @@ a:visited {
 .main-page .main-content .ladder-calc-tabs .btn-tabs:first-of-type {
   margin-left: 0px;
 }
-.main-page .main-content .ladder-calc-tabs .btn-tabs:nth-child(1) {
-  border-bottom: solid;
-  border-bottom-color: rgba(255, 0, 0, 0.8);
-}
 .main-page .main-content .ladder-calc-tabs .btn-tabs:hover {
   background-color: rgba(255, 0, 0, 0.5);
 }
 .main-page .main-content .ladder-calc-tabs .btn-tabs:active {
   background-color: red;
   transition: background-color 0s;
+}
+.main-page .main-content .ladder-calc-tabs .active-tab {
+  border-bottom: solid;
+  border-bottom-color: rgba(255, 0, 0, 0.8);
 }
 
 .ladder-calc-subcontent {
@@ -120,6 +120,15 @@ a:visited {
 }
 .ladder-calc-subcontent .subcontent-sub-info {
   grid-area: subinfo;
+}
+.ladder-calc-subcontent .subcontent-sub-info .tab1 {
+  display: block;
+}
+.ladder-calc-subcontent .subcontent-sub-info .tab2 {
+  display: none;
+}
+.ladder-calc-subcontent .subcontent-sub-info .tab3 {
+  display: none;
 }
 .ladder-calc-subcontent .subcontent-calc_result {
   grid-area: calc-result;
@@ -150,10 +159,9 @@ a:visited {
 }
 .ladder-calc-subcontent .subcontent-image {
   grid-area: img;
-  padding-right: 15px;
 }
 .ladder-calc-subcontent .subcontent-image .result-img {
-  max-width: 100%;
+  max-width: 85%;
   height: auto;
   place-self: center;
 }

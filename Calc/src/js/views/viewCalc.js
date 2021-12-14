@@ -39,7 +39,7 @@ class viewCalc extends View {
     this._parentElement = this._getCalcResEl();
 
     return `
-    ${infoText.infoCalculator}
+    ${infoText.ladderCalcInput}
     `;
   }
 

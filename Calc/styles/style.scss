@@ -122,10 +122,10 @@ a {
           margin-left: 0px;
         }
 
-        &:nth-child(1) {
-          border-bottom: solid;
-          border-bottom-color: $tabBorderBaseColor;
-        }
+        // &:nth-child(1) {
+        //   border-bottom: solid;
+        //   border-bottom-color: $tabBorderBaseColor;
+        // }
 
         &:hover {
           background-color: $tabHoverBGColor;
@@ -135,6 +135,11 @@ a {
           background-color: red;
           transition: background-color 0s;
         }
+      }
+
+      .active-tab {
+        border-bottom: solid;
+        border-bottom-color: $tabBorderBaseColor;
       }
     }
   }
@@ -156,6 +161,18 @@ a {
 
   .subcontent-sub-info {
     grid-area: subinfo;
+
+    .tab1 {
+      display: block;
+    }
+
+    .tab2 {
+      display: none;
+    }
+
+    .tab3 {
+      display: none;
+    }
   }
 
   .subcontent-calc_result {
@@ -195,10 +212,9 @@ a {
 
   .subcontent-image {
     grid-area: img;
-    padding-right: 15px;
 
     .result-img {
-      max-width: 100%;
+      max-width: 85%;
       height: auto;
       place-self: center;
     }

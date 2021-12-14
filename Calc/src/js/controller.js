@@ -6,6 +6,7 @@ import { printResult } from "./views/viewPrint.js";
 import viewInfo from "./views/viewInfo.js";
 import viewCalc from "./views/viewCalc.js";
 import viewResult from "./views/viewResult.js";
+import { chkCompliance } from "./models/validateInput.js";
 
 // import viewMaterials from "./views/viewMaterials.js";
 
@@ -45,7 +46,8 @@ const savePrint = function (data) {
 };
 
 const init = function () {
-  viewInfo._renderData(viewInfo._generateInfoLadder());
+  // viewInfo._renderData(viewInfo._generateInfoLadder());
+  viewInfo._renderActiveTab();
   addInputHandlers();
   // viewResult._getParentEl();
 };
