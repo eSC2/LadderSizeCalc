@@ -1,6 +1,6 @@
 "use strict";
 
-import { ladderComplianceData } from "../helpers.js";
+import * as compData from "../helpers.js";
 
 export default class DefaultLadderStair {
   constructor(vHeight, width, pitch) {
@@ -23,7 +23,7 @@ export default class DefaultLadderStair {
 
   // Calculate rung quantity
   _calcRungQty() {
-    return Math.ceil(this.ladderBaseLength / ladderComplianceData.maxRungSpc);
+    return Math.ceil(this.ladderBaseLength / compData.complianceData1.maxRungSpc);
   }
 
   // Calculate rung spacing

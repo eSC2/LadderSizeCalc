@@ -3,14 +3,6 @@
 import View from "./view.js";
 import * as ladderText from "../helpers.js";
 
-/* View from view.js
-export default class View {
-    _clear() {
-      this._parentElement.innerHTML = "";
-    }
-  }
-*/
-
 class viewInfo extends View {
   _parentElement = document.querySelector(".ladder-calc-subcontent");
 
@@ -26,7 +18,17 @@ class viewInfo extends View {
       `;
   }
 
-  _generateInfoStair() {}
+  _getCurrentActiveTab() {
+    const chkActiveTab = document.querySelectorAll(".btn-tabs");
+    let activeTab = "";
+
+    chkActiveTab.forEach(function (el) {
+      if (el.classList.contains("active-tab")) {
+        activeTab = el.id;
+      }
+    });
+    return activeTab;
+  }
 
   _renderActiveTab() {
     const activeTabs = document.querySelectorAll(".btn-tabs");
@@ -51,9 +53,6 @@ class viewInfo extends View {
         el.classList.toggle("active-tab");
         tabID = el.id;
         renderTabBind();
-        ///////////////
-
-        // return el.id and call another function to toggle display:none;
       });
     });
   }

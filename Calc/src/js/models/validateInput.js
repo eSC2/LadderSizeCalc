@@ -1,6 +1,6 @@
 "use strict";
 
-import { ladderComplianceData } from "../helpers.js";
+import * as compData from "../helpers.js";
 
 export const chkComplianceFunc = function () {};
 
@@ -11,9 +11,19 @@ export const chkEmptyInput = function (data, error) {
   return inputData.includes(0) || inputData.includes(NaN) ? error() : inputData;
 };
 
+export const chkActiveTab = function (data) {
+  if (data === "1") {
+    return compData.complianceData1;
+  } else if (data === "2") {
+    return compData.complianceData2;
+  } else {
+    return compData.complianceData3;
+  }
+};
+
 // Check whether input complies to complianceData
-export const chkCompliance = function (data, error) {
-  const compDataArr = Object.values(ladderComplianceData);
+export const chkCompliance = function (data, error, compTab) {
+  const compDataArr = Object.values(compTab);
 
   const chkComp = data.every((el, i) => {
     const [a, b] = compDataArr[i];

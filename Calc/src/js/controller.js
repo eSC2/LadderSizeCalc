@@ -12,9 +12,10 @@ import { chkCompliance } from "./models/validateInput.js";
 
 const calculateLadder = function () {
   const userInput = viewCalc._getUserInput();
+  const activeTab = viewInfo._getCurrentActiveTab();
 
   viewResult._renderData(viewResult._clearError());
-  calcResult(userInput, renderError, renderResult);
+  calcResult(userInput, renderError, renderResult, activeTab);
 };
 
 const addInputHandlers = function () {
