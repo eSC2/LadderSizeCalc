@@ -48,7 +48,7 @@ const savePrint = function (data) {
 
 const init = function () {
   // viewInfo._renderData(viewInfo._generateInfoLadder());
-  viewInfo._renderActiveTab();
+  viewInfo._renderActiveTab(renderLadderCalc);
   addInputHandlers();
   // viewResult._getParentEl();
 };

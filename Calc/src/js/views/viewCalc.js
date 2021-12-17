@@ -1,7 +1,8 @@
 "use strict";
 
 import View from "./view.js";
-import * as infoText from "../helpers.js";
+// import * as infoText from "../helpers.js";
+import * as infoText from "../views/viewHTMLData.js";
 
 /*
 export default class View {

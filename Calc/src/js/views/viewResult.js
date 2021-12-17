@@ -1,6 +1,9 @@
 "use strict";
 
 import View from "./view.js";
+import { resultDataRungLadder } from "../views/viewHTMLData.js";
+import { resultDataStepLadder } from "../views/viewHTMLData.js";
+import { resultDataStair } from "../views/viewHTMLData.js";
 
 class viewResult extends View {
   _parentElement = document.querySelector(".subcontent-calculator");
@@ -16,29 +19,9 @@ class viewResult extends View {
   _renderResult(data) {
     this._parentElement = this._getSubContentEl();
 
-    return `
-    <div class='subcontent-result'>
-    <ul>
-        <li>Vertical Height: ${data.verticalHeight}mm</li>
-        <li>Internal Width: ${data.ladderWidth}mm</li>
-        <li>Ladder Pitch: ${data.ladderPitch}°</li>
-        <br>
-        <li>Ladder Base Length: ${data.ladderBaseLength}mm</li>
-        <li>Top Stile Length: ${data.topStileLength}mm</li>
-        <li>Rung Height: ${data.rungSpace}mm</li>
-        <li>Rung Quantity: ${data.rungQty} off</li>
-        <br>
-        <li>Total Ladder Height: ${data.totalStileLength}mm</li>
-    </ul>
-    <div>
-    <br />
-    <p><strong>Note</strong>: Result is for guidance only. Always seek professional advices from certified height safety product supplier.</p>
-    <br />
-    <div class="result-btn">
-      <button class="btn-back">Back</button>
-      <button class="btn-save">Save</button>
-    </div>
-    `;
+    const resultArr = [resultDataRungLadder, resultDataStepLadder, resultDataStair];
+
+    return resultArr[data.tabID](data);
   }
 
   _renderError() {

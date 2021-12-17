@@ -1,7 +1,7 @@
 "use strict";
 
 import View from "./view.js";
-import * as ladderText from "../helpers.js";
+import * as ladderText from "../views/viewHTMLData.js";
 
 class viewInfo extends View {
   _parentElement = document.querySelector(".ladder-calc-subcontent");
@@ -30,7 +30,7 @@ class viewInfo extends View {
     return activeTab;
   }
 
-  _renderActiveTab() {
+  _renderActiveTab(renderCalc) {
     const activeTabs = document.querySelectorAll(".btn-tabs");
 
     let tabID = "";
@@ -42,7 +42,8 @@ class viewInfo extends View {
 
       allSubcontents.forEach((el) => (el.style.display = "none"));
       renderActiveTab.forEach((el) => (el.style.display = "block"));
-      resultImg.src = `./src/js/img/ladderdwg${tabID}.jpg`;
+      resultImg.src = `./src/img/ladderdwg${tabID}.jpg`;
+      renderCalc();
     };
 
     const renderTabBind = renderTab.bind();

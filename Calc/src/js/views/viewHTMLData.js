@@ -65,3 +65,79 @@ export const infoStepLadder = `
   <img class="result-img" src="./src/js/img/rungladderdwg.jpg" alt="Rung Ladder Drawing" />
 </div>
 `;
+
+export function resultDataRungLadder(data) {
+  return `
+  <div class='subcontent-result'>
+  <ul>
+      <li>Vertical Height: ${data.verticalHeight}mm</li>
+      <li>Internal Width: ${data.ladderWidth}mm</li>
+      <li>Ladder Pitch: ${data.ladderPitch}°</li>
+      <br>
+      <li>Ladder Base Length: ${data.ladderBaseLength}mm</li>
+      <li>Top Stile Length: ${data.topStileLength}mm</li>
+      <li>Rung Height: ${data.rungSpace}mm</li>
+      <li>Rung Quantity: ${data.rungQty} off</li>
+      <br>
+      <li>Total Ladder Height: ${data.totalStileLength}mm</li>
+  </ul>
+  <div>
+  <br />
+  <p><strong>Note</strong>: Result is for guidance only. Always seek professional advices from certified height safety product supplier.</p>
+  <br />
+  <div class="result-btn">
+    <button class="btn-back">Back</button>
+    <button class="btn-save">Save</button>
+  </div>
+  `;
+}
+
+export function resultDataStepLadder(data) {
+  return `
+  <div class='subcontent-result'>
+  <ul>
+      <li>Vertical Height: ${data.verticalHeight}mm</li>
+      <li>Internal Width: ${data.ladderWidth}mm</li>
+      <li>Ladder Pitch: ${data.ladderPitch}°</li>
+      <br>
+      <li>Ladder Base Length: ${data.ladderBaseLength}mm</li>
+      <li>Step Height: ${data.stepSpace}mm</li>
+      <li>Step Quantity: ${data.stepQty} off</li>
+      <br>
+      <li>Total Ladder Height: ${data.totalStileLength}mm</li>
+  </ul>
+  <div>
+  <br />
+  <p><strong>Note</strong>: Result is for guidance only. Always seek professional advices from certified height safety product supplier.</p>
+  <br />
+  <div class="result-btn">
+    <button class="btn-back">Back</button>
+    <button class="btn-save">Save</button>
+  </div>
+  `;
+}
+
+export function resultDataStair(data) {
+  return `
+  <div class='subcontent-result'>
+  <ul>
+      <li>Vertical Height: ${data.verticalHeight}mm</li>
+      <li>Internal Width: ${data.ladderWidth}mm</li>
+      <li>Stair Slope: ${data.ladderPitch}°</li>
+      <br>
+      <li>Ladder Base Length: ${data.ladderBaseLength}mm</li>
+      <li>Stair Riser: ${data.stepSpace}mm</li>
+      <li>Stair Going: ${data.stepSpace}mm</li>
+      <li>Stair Depth: ${data.stepSpace}mm</li>
+      <li>Stair Quantity: ${data.stepQty} off</li>
+  </ul>
+  <div>
+  <br />
+  <p><strong>Note</strong>: Result is for guidance only. Always seek professional advices from certified height safety product supplier.</p>
+  <br />
+  <div class="result-btn">
+    <button class="btn-back">Back</button>
+    <button class="btn-save">Save</button>
+  </div>
+  `;
+}

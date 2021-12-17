@@ -1,10 +1,13 @@
 "use strict";
 
 import * as validateInput from "./validateInput.js";
-import createNewLadder from "./classDefaultLadderStair.js";
+import createNewRung from "./classRungLadder.js";
+import createNewStep from "./classStepLadder.js";
 
 // Delegate calculation
 export const calcResult = function (data, error, result, activeTab) {
+  const createResultArr = [createNewRung, createNewStep];
+
   const chkEmptyResult = validateInput.chkEmptyInput(data, error);
   if (chkEmptyResult == undefined) {
     return;
@@ -20,5 +23,10 @@ export const calcResult = function (data, error, result, activeTab) {
     return;
   }
 
-  result(new createNewLadder(...chkCompResult));
+  const finalChkAddID = validateInput.addTabID(chkCompResult, activeTab);
+  if (finalChkAddID == undefined) {
+    return;
+  }
+
+  result(new createResultArr[activeTab](...finalChkAddID));
 };

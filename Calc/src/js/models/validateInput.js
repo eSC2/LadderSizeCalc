@@ -1,6 +1,6 @@
 "use strict";
 
-import * as compData from "../helpers.js";
+import * as compData from "../data/complianceData.js";
 
 export const chkComplianceFunc = function () {};
 
@@ -11,14 +11,10 @@ export const chkEmptyInput = function (data, error) {
   return inputData.includes(0) || inputData.includes(NaN) ? error() : inputData;
 };
 
-export const chkActiveTab = function (data) {
-  if (data === "1") {
-    return compData.complianceData1;
-  } else if (data === "2") {
-    return compData.complianceData2;
-  } else {
-    return compData.complianceData3;
-  }
+export const chkActiveTab = function (activeTab) {
+  const compDataArr = [compData.complianceDataRung, compData.complianceDataStep, compData.complianceDataStair];
+
+  return compDataArr[activeTab];
 };
 
 // Check whether input complies to complianceData
@@ -35,4 +31,10 @@ export const chkCompliance = function (data, error, compTab) {
   });
 
   return chkComp != false ? data : error();
+};
+
+export const addTabID = function (data, activeTab) {
+  data.push(+activeTab);
+
+  return data;
 };
