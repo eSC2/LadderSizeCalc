@@ -6,7 +6,6 @@ import { printResult } from "./views/viewPrint.js";
 import viewInfo from "./views/viewInfo.js";
 import viewCalc from "./views/viewCalc.js";
 import viewResult from "./views/viewResult.js";
-import { chkCompliance } from "./models/validateInput.js";
 
 // import viewMaterials from "./views/viewMaterials.js";
 

@@ -3,10 +3,11 @@
 import * as validateInput from "./validateInput.js";
 import createNewRung from "./classRungLadder.js";
 import createNewStep from "./classStepLadder.js";
+import createNewStair from "./classStair.js";
 
 // Delegate calculation
 export const calcResult = function (data, error, result, activeTab) {
-  const createResultArr = [createNewRung, createNewStep];
+  const createResultArr = [createNewRung, createNewStep, createNewStair];
 
   const chkEmptyResult = validateInput.chkEmptyInput(data, error);
   if (chkEmptyResult == undefined) {

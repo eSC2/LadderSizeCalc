@@ -17,8 +17,11 @@ export const complianceDataStep = {
 };
 
 export const complianceDataStair = {
-  minMaxVHeight: [300, 4000], // Stair Ladder Min/Max Vertical Height
-  stairWidthRange: [600], // Stair Ladder Min/Max Width
-  stairPitchRange: [30, 38], // Stair Ladder Min/Max Pitch
-  maxStepSpc: 300, // Max step spacing
+  minMaxVHeight: [300, 4000], // Stair Min/Max Vertical Height
+  stairWidthRange: [600], // Stair Min/Max Width
+  stairPitchRange: [30, 38], // Stair Min/Max Pitch
+  minMaxRiserSpc: [130, 225], // Riser Min/Max Spacing
+  minMaxGoingDepth: [215, 355], // Tread Min/Max Going
+  maxDepthGap: 30, // Max gap between treads
+  minMaxCombination: [540, 700], // Stair Tread Combi Min/Max 2R + G
 };

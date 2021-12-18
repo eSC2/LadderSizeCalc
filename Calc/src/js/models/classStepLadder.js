@@ -1,16 +1,18 @@
 "use strict";
 
 import DefaultLadderClass from "./classDefaultLadderStair.js";
-import * as compData from "../data/complianceData.js";
+import { complianceDataStep } from "../data/complianceData.js";
 
 export default class StepLadder extends DefaultLadderClass {
   constructor(vHeight, width, pitch, activeTab) {
     super(vHeight, width, pitch, activeTab);
+
+    this._fillData();
   }
 
   // Calculate step quantity
   _calcStepQty() {
-    return Math.ceil(this.verticalHeight / compData.complianceDataStep.maxStepSpc);
+    return Math.ceil(this.verticalHeight / complianceDataStep.maxStepSpc);
   }
 
   // Calculate step spacing

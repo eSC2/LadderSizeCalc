@@ -1,16 +1,18 @@
 "use strict";
 
 import DefaultLadderClass from "./classDefaultLadderStair.js";
-import * as compData from "../data/complianceData.js";
+import { complianceDataRung } from "../data/complianceData.js";
 
 export default class RungLadder extends DefaultLadderClass {
   constructor(vHeight, width, pitch, activeTab) {
     super(vHeight, width, pitch, activeTab);
+
+    this._fillData();
   }
 
   // Calculate rung quantity
   _calcRungQty() {
-    return Math.ceil(this.ladderBaseLength / compData.complianceDataRung.maxRungSpc);
+    return Math.ceil(this.ladderBaseLength / complianceDataRung.maxRungSpc);
   }
 
   // Calculate rung spacing

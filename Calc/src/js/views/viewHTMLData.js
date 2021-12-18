@@ -6,9 +6,9 @@ export const ladderCalcInput = `
 <div class='subcontent-inputFields'>
   <p>Vertical Height</p>
   <input class="input-field" vHeight />
-  <p>Ladder Width</p>
+  <p>Internal Width</p>
   <input class="input-field" ladderWidth />
-  <p>Ladder Pitch</p>
+  <p>Desired Pitch</p>
   <input class="input-field" ladderPitch />
   </div>
   <br />
@@ -125,11 +125,11 @@ export function resultDataStair(data) {
       <li>Internal Width: ${data.ladderWidth}mm</li>
       <li>Stair Slope: ${data.ladderPitch}°</li>
       <br>
-      <li>Ladder Base Length: ${data.ladderBaseLength}mm</li>
-      <li>Stair Riser: ${data.stepSpace}mm</li>
-      <li>Stair Going: ${data.stepSpace}mm</li>
-      <li>Stair Depth: ${data.stepSpace}mm</li>
-      <li>Stair Quantity: ${data.stepQty} off</li>
+      <li>Tread Riser: ${data.riserHeight}mm</li>
+      <li>Tread Going: ${data.flightGoing}mm</li>
+      <li>Tread Quantity: ${data.riserQty} off</li>
+      <br>
+      <li>Min. Tread Depth: ${data.flightDepth}mm</li>
   </ul>
   <div>
   <br />

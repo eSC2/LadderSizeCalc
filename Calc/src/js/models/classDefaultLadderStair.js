@@ -1,6 +1,5 @@
 "use strict";
 
-// import * as compData from "../helpers.js";
 import * as compData from "../data/complianceData.js";
 
 export default class DefaultLadderStair {
@@ -10,7 +9,7 @@ export default class DefaultLadderStair {
     this.ladderPitch = pitch;
     this.tabID = activeTab;
 
-    this._fillData();
+    // this._fillData();
   }
 
   // Calculate radians
