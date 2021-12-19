@@ -13,7 +13,7 @@ const calculateLadder = function () {
   const userInput = viewCalc._getUserInput();
   const activeTab = viewInfo._getCurrentActiveTab();
 
-  viewResult._renderData(viewResult._clearError());
+  clearError();
   calcResult(userInput, renderError, renderResult, activeTab);
 };
 
@@ -41,13 +41,17 @@ const renderError = function () {
   viewResult._renderData(viewResult._renderError());
 };
 
+const clearError = function () {
+  viewResult._renderData(viewResult._clearError());
+};
+
 const savePrint = function (data) {
   printResult(data);
 };
 
 const init = function () {
   // viewInfo._renderData(viewInfo._generateInfoLadder());
-  viewInfo._renderActiveTab(renderLadderCalc);
+  viewInfo._renderActiveTab(renderLadderCalc, clearError);
   addInputHandlers();
   // viewResult._getParentEl();
 };

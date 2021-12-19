@@ -30,7 +30,7 @@ class viewInfo extends View {
     return activeTab;
   }
 
-  _renderActiveTab(renderCalc) {
+  _renderActiveTab(renderCalc, clearError) {
     const activeTabs = document.querySelectorAll(".btn-tabs");
 
     let tabID = "";
@@ -46,6 +46,7 @@ class viewInfo extends View {
       allSubcontents.forEach((el) => (el.style.display = "none"));
       renderActiveTab.forEach((el) => (el.style.display = "block"));
 
+      clearError();
       renderCalc();
     };
 
