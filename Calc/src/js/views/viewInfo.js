@@ -40,9 +40,12 @@ class viewInfo extends View {
       const resultImg = document.querySelector(".result-img");
       const renderActiveTab = document.querySelectorAll(`.tab${tabID}`);
 
+      resultImg.src = "";
+      resultImg.src = `./src/img/ladderdwg${tabID}.jpg`;
+
       allSubcontents.forEach((el) => (el.style.display = "none"));
       renderActiveTab.forEach((el) => (el.style.display = "block"));
-      resultImg.src = `./src/img/ladderdwg${tabID}.jpg`;
+
       renderCalc();
     };
 

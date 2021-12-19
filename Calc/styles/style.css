@@ -46,15 +46,24 @@ a:visited {
 .main-page {
   background-color: rgba(0, 0, 0, 0.2);
   display: grid;
-  height: auto;
+  height: 100vh;
+  overflow: hidden;
   grid-template-columns: 1fr 200px minmax(700px, 800px) 200px 1fr;
-  grid-template-areas: ". navi main link ." ". navi footer link .";
+  grid-template-areas: ". navi main link .";
+}
+.main-page .main-content::-webkit-scrollbar {
+  width: 8px;
+}
+.main-page .main-content::-webkit-scrollbar-thumb {
+  background-color: rgba(220, 220, 220, 0.5);
 }
 .main-page .main-content {
   grid-area: main;
   display: grid;
   height: auto;
-  grid-template-rows: auto;
+  overflow-y: scroll;
+  scrollbar-width: thin;
+  grid-template-rows: 90px 80px 60px 50px 1fr;
   grid-template-areas: "header" "info" "subhead" "tabs" "subcontent";
 }
 .main-page .main-content .ladder-calc-header {
@@ -114,12 +123,13 @@ a:visited {
   display: grid;
   max-width: 100%;
   height: auto;
-  grid-template-columns: 35% auto;
+  grid-template-columns: 35% 1fr;
   grid-template-rows: auto;
   grid-template-areas: "subinfo subinfo" "calc-result img" "message img";
 }
 .ladder-calc-subcontent .subcontent-sub-info {
   grid-area: subinfo;
+  overflow: auto;
 }
 .ladder-calc-subcontent .subcontent-sub-info .tab1 {
   display: block;
@@ -161,7 +171,7 @@ a:visited {
   grid-area: img;
 }
 .ladder-calc-subcontent .subcontent-image .result-img {
-  max-width: 85%;
+  max-width: 100%;
   height: auto;
   place-self: center;
 }

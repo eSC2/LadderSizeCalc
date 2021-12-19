@@ -62,17 +62,27 @@ a {
 .main-page {
   background-color: $mainPageBGColor;
   display: grid;
-  height: auto;
+  height: 100vh;
+  overflow: hidden;
   grid-template-columns: 1fr 200px minmax(700px, 800px) 200px 1fr;
-  grid-template-areas:
-    ". navi main link ."
-    ". navi footer link .";
+  grid-template-areas: ". navi main link .";
+
+  .main-content::-webkit-scrollbar {
+    width: 8px;
+    // background-color: red;
+  }
+
+  .main-content::-webkit-scrollbar-thumb {
+    background-color: $menuBorderColor;
+  }
 
   .main-content {
     grid-area: main;
     display: grid;
     height: auto;
-    grid-template-rows: auto;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    grid-template-rows: 90px 80px 60px 50px 1fr;
     grid-template-areas:
       "header"
       "info"
@@ -152,7 +162,8 @@ a {
   display: grid;
   max-width: 100%;
   height: auto;
-  grid-template-columns: 35% auto;
+
+  grid-template-columns: 35% 1fr;
   grid-template-rows: auto;
   grid-template-areas:
     "subinfo subinfo"
@@ -161,6 +172,7 @@ a {
 
   .subcontent-sub-info {
     grid-area: subinfo;
+    overflow: auto;
 
     .tab1 {
       display: block;
@@ -214,7 +226,7 @@ a {
     grid-area: img;
 
     .result-img {
-      max-width: 85%;
+      max-width: 100%;
       height: auto;
       place-self: center;
     }
