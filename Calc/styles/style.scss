@@ -1,5 +1,6 @@
 $bgColor: white;
-$mainPageBGColor: rgba(0, 0, 0, 0.2);
+// $mainPageBGColor: rgba(0, 0, 0, 0.2);
+$mainPageBGColor: white;
 $textColor: rgba(0, 0, 0, 0.85);
 $textBGColor: transparent;
 $linkTxtColor: rgba(0, 0, 0, 0.3);
@@ -11,15 +12,25 @@ $tabBorderBaseColor: rgba(255, 0, 0, 0.8);
 $tabHoverBGColor: rgba(255, 0, 0, 0.5);
 $zIndexMainGrid: 2;
 $zIndexMenuGrid: 1;
+$linearGradient: rgba(150, 150, 150, 0.3) 40%, rgba(255, 255, 255, 1) 100%;
 
 * {
-  background-color: $bgColor;
+  // background-color: $bgColor;
   font-family: "Montserrat", sans-serif;
   padding: 0;
   margin: 0;
   line-height: 1;
   color: $textColor;
 }
+
+// body {
+//   display: flex;
+//   background-image: url("../src/img/BGIMGStair.jpeg"), url("../src/img/BGIMGrungLadder.jpg");
+//   background-attachment: inherit;
+//   background-position: 110%, -20rem;
+//   background-repeat: no-repeat;
+//   background-size: auto 100vh, auto 100vh;
+// }
 
 h1 {
   font-weight: bold;
@@ -64,7 +75,7 @@ a {
   display: grid;
   height: 100vh;
   overflow: hidden;
-  grid-template-columns: 1fr 200px minmax(700px, 800px) 200px 1fr;
+  grid-template-columns: 1fr 400px minmax(700px, 800px) 400px 1fr;
   grid-template-areas: ". navi main link .";
 
   .main-content::-webkit-scrollbar {
@@ -77,6 +88,8 @@ a {
   }
 
   .main-content {
+    z-index: 1;
+    background-color: $bgColor;
     grid-area: main;
     display: grid;
     height: auto;
@@ -268,6 +281,18 @@ a {
   }
 }
 
+.nav-background {
+  grid-area: navi;
+  background-image: url("../src/img/BGIMGrungLadder.jpg");
+  background-size: auto 100vh;
+  background-position: -30rem;
+}
+
+.nav-background-fade {
+  grid-area: navi;
+  background: linear-gradient(to left, $linearGradient);
+}
+
 .nav-arrow:hover {
   cursor: pointer;
 }
@@ -287,11 +312,12 @@ a {
   position: relative;
   height: fit-content;
   top: 80px; // change value to slide vertically
-  left: 0px; // change value to slide horizontally
+  left: 400px; // change value to slide horizontally 200-400
   display: flex;
   background-color: $menuBGColor;
   border-color: $menuBorderColor;
   align-items: center;
+  z-index: 0;
 
   .nav-arrow {
     right: 102%;
@@ -305,6 +331,18 @@ a {
   }
 }
 
+.links-background {
+  grid-area: link;
+  background-image: url("../src/img/BGIMGStair.jpeg");
+  background-size: auto 100vh;
+  background-position: -10rem;
+}
+
+.links-background-fade {
+  grid-area: link;
+  background: linear-gradient(to right, $linearGradient);
+}
+
 .links-menu {
   grid-area: link;
   border-left-style: solid;
@@ -315,11 +353,12 @@ a {
   position: relative;
   height: fit-content;
   top: 80px; // change value to slide vertically
-  left: 0px; // change value to slide horizontally
+  left: -400px; // change value to slide horizontally
   display: flex;
   background-color: $menuBGColor;
   border-color: $menuBorderColor;
   align-items: center;
+  z-index: 0;
 
   .nav-arrow {
     left: 102%;

@@ -1,5 +1,4 @@
 * {
-  background-color: white;
   font-family: "Montserrat", sans-serif;
   padding: 0;
   margin: 0;
@@ -44,11 +43,11 @@ a:visited {
 }
 
 .main-page {
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: white;
   display: grid;
   height: 100vh;
   overflow: hidden;
-  grid-template-columns: 1fr 200px minmax(700px, 800px) 200px 1fr;
+  grid-template-columns: 1fr 400px minmax(700px, 800px) 400px 1fr;
   grid-template-areas: ". navi main link .";
 }
 .main-page .main-content::-webkit-scrollbar {
@@ -58,6 +57,8 @@ a:visited {
   background-color: rgba(220, 220, 220, 0.5);
 }
 .main-page .main-content {
+  z-index: 1;
+  background-color: white;
   grid-area: main;
   display: grid;
   height: auto;
@@ -207,6 +208,18 @@ a:visited {
   padding-right: 10px;
 }
 
+.nav-background {
+  grid-area: navi;
+  background-image: url("../src/img/BGIMGrungLadder.jpg");
+  background-size: auto 100vh;
+  background-position: -30rem;
+}
+
+.nav-background-fade {
+  grid-area: navi;
+  background: linear-gradient(to left, rgba(150, 150, 150, 0.3) 40%, white 100%);
+}
+
 .nav-arrow:hover {
   cursor: pointer;
 }
@@ -228,11 +241,12 @@ a:visited {
   height: -moz-fit-content;
   height: fit-content;
   top: 80px;
-  left: 0px;
+  left: 400px;
   display: flex;
   background-color: white;
   border-color: rgba(220, 220, 220, 0.5);
   align-items: center;
+  z-index: 0;
 }
 .nav-menu .nav-arrow {
   right: 102%;
@@ -242,6 +256,18 @@ a:visited {
   position: center;
   background: transparent;
   height: 30px;
+}
+
+.links-background {
+  grid-area: link;
+  background-image: url("../src/img/BGIMGStair.jpeg");
+  background-size: auto 100vh;
+  background-position: -10rem;
+}
+
+.links-background-fade {
+  grid-area: link;
+  background: linear-gradient(to right, rgba(150, 150, 150, 0.3) 40%, white 100%);
 }
 
 .links-menu {
@@ -256,11 +282,12 @@ a:visited {
   height: -moz-fit-content;
   height: fit-content;
   top: 80px;
-  left: 0px;
+  left: -400px;
   display: flex;
   background-color: white;
   border-color: rgba(220, 220, 220, 0.5);
   align-items: center;
+  z-index: 0;
 }
 .links-menu .nav-arrow {
   left: 102%;
