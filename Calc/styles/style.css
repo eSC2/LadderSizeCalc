@@ -43,11 +43,11 @@ a:visited {
 }
 
 .main-page {
-  background-color: white;
+  background-color: #fefefe;
   display: grid;
   height: 100vh;
   overflow: hidden;
-  grid-template-columns: 1fr 400px minmax(700px, 800px) 400px 1fr;
+  grid-template-columns: 1fr 350px minmax(700px, 800px) 350px 1fr;
   grid-template-areas: ". navi main link .";
 }
 .main-page .main-content::-webkit-scrollbar {
@@ -210,14 +210,17 @@ a:visited {
 
 .nav-background {
   grid-area: navi;
-  background-image: url("../src/img/BGIMGrungLadder.jpg");
-  background-size: auto 100vh;
-  background-position: -30rem;
+  overflow: hidden;
+}
+.nav-background .nav-background-img {
+  position: relative;
+  left: -45rem;
+  z-index: -1;
 }
 
 .nav-background-fade {
   grid-area: navi;
-  background: linear-gradient(to left, rgba(150, 150, 150, 0.3) 40%, white 100%);
+  background: linear-gradient(to left, rgba(120, 120, 120, 0.2) 15%, #fefefe 90%);
 }
 
 .nav-arrow:hover {
@@ -260,14 +263,19 @@ a:visited {
 
 .links-background {
   grid-area: link;
-  background-image: url("../src/img/BGIMGStair.jpeg");
-  background-size: auto 100vh;
-  background-position: -10rem;
+  overflow: hidden;
+}
+.links-background .links-background-img {
+  position: relative;
+  overflow: hidden;
+  transform: scaleX(-1);
+  left: -12rem;
+  z-index: -1;
 }
 
 .links-background-fade {
   grid-area: link;
-  background: linear-gradient(to right, rgba(150, 150, 150, 0.3) 40%, white 100%);
+  background: linear-gradient(to right, rgba(120, 120, 120, 0.2) 15%, #fefefe 90%);
 }
 
 .links-menu {
