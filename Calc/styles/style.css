@@ -32,7 +32,6 @@ a {
   color: rgba(0, 0, 0, 0.3);
   background-color: transparent;
   text-decoration: none;
-  font-size: 1.2rem;
   font-weight: 600;
 }
 a:active {
@@ -47,7 +46,7 @@ a:visited {
   display: grid;
   height: 100vh;
   overflow: hidden;
-  grid-template-columns: 1fr 350px minmax(700px, 800px) 350px 1fr;
+  grid-template-columns: 1fr 350px minmax(600px, 800px) 350px 1fr;
   grid-template-areas: ". navi main link .";
 }
 .main-page .main-content::-webkit-scrollbar {
@@ -216,6 +215,13 @@ a:visited {
   position: relative;
   left: -45rem;
   z-index: -1;
+}
+.nav-background .citation-text {
+  font-size: 10px;
+  position: fixed;
+  left: 12rem;
+  bottom: 0;
+  z-index: auto;
 }
 
 .nav-background-fade {
