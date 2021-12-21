@@ -281,7 +281,7 @@ a {
     z-index: -1;
   }
 
-  .citation-text {
+  .nav-citation-text {
     font-size: 10px;
     position: fixed;
     left: 12rem;
@@ -344,6 +344,15 @@ a {
     transform: scaleX(-1);
     left: -12rem;
     z-index: -1;
+  }
+
+  .links-citation-text {
+    font-size: 10px;
+    position: fixed;
+    right: 12rem;
+    bottom: 0;
+    // width: 150px;
+    z-index: auto;
   }
 }
 
