@@ -2,7 +2,7 @@ $bgColor: white;
 $mainPageBGColor: rgb(254, 254, 254);
 $textColor: rgba(0, 0, 0, 0.85);
 $textBGColor: transparent;
-$linkTxtColor: rgba(0, 0, 0, 0.3);
+$linkTxtColor: rgba(0, 0, 0, 0.4);
 $menuBGColor: white;
 $menuBorderColor: rgba(220, 220, 220, 0.5);
 $menuCornerRadius: 20px;
@@ -10,7 +10,7 @@ $menuMargin: 50% 0%;
 $tabBorderBaseColor: rgba(255, 0, 0, 0.8);
 $tabHoverBGColor: rgba(255, 0, 0, 0.5);
 $zIndexMainGrid: 2;
-$zIndexMenuGrid: 1;
+$zIndexMenuGrid: 0;
 $linearGradient: rgba(120, 120, 120, 0.2) 15%, rgba(254, 254, 254, 1) 90%;
 
 * {
@@ -32,7 +32,9 @@ h2 {
 
 p,
 nav,
-li {
+li,
+input,
+textarea {
   font-size: 0.8rem;
   line-height: 1.6;
   word-spacing: 0.2rem;
@@ -274,6 +276,7 @@ a {
 .nav-background {
   grid-area: navi;
   overflow: hidden;
+  position: relative;
 
   .nav-background-img {
     position: relative;
@@ -283,11 +286,10 @@ a {
 
   .nav-citation-text {
     font-size: 10px;
-    position: fixed;
-    left: 12rem;
-    bottom: 0;
-    // width: 150px;
-    z-index: auto;
+    position: absolute;
+    right: 10px;
+    bottom: 5px;
+    z-index: 0;
   }
 }
 
@@ -307,23 +309,33 @@ a {
 
 .nav-menu {
   grid-area: navi;
-  border-right-style: solid;
   border-top-left-radius: $menuCornerRadius;
   border-bottom-left-radius: $menuCornerRadius;
   z-index: $zIndexMenuGrid;
-  padding: 30px 15px;
+  padding: 30px 0px;
   position: relative;
-  height: fit-content;
-  top: 80px; // change value to slide vertically
-  left: 400px; // change value to slide horizontally 200-400
+  height: 150px;
+  width: 30px;
+  top: 150px; // change value to slide vertically
+  left: 350px; // change value to slide horizontally 320-350
+  transition-property: left;
+  transition-duration: 0.3s;
   display: flex;
   background-color: $menuBGColor;
   border-color: $menuBorderColor;
   align-items: center;
-  z-index: 0;
+
+  .menu-contact {
+    position: absolute;
+    left: 7px;
+    bottom: 35px;
+    font-size: 1rem;
+    writing-mode: vertical-lr;
+    text-orientation: upright;
+  }
 
   .nav-arrow {
-    right: 102%;
+    right: 110%;
   }
 
   .menu-arrow {
@@ -337,6 +349,7 @@ a {
 .links-background {
   grid-area: link;
   overflow: hidden;
+  position: relative;
 
   .links-background-img {
     position: relative;
@@ -348,11 +361,10 @@ a {
 
   .links-citation-text {
     font-size: 10px;
-    position: fixed;
-    right: 12rem;
-    bottom: 0;
-    // width: 150px;
-    z-index: auto;
+    position: absolute;
+    left: 10px;
+    bottom: 5px;
+    z-index: 0;
   }
 }
 
@@ -363,23 +375,33 @@ a {
 
 .links-menu {
   grid-area: link;
-  border-left-style: solid;
   border-top-right-radius: $menuCornerRadius;
   border-bottom-right-radius: $menuCornerRadius;
   z-index: $zIndexMenuGrid;
-  padding: 30px 15px;
+  width: 30px;
+  padding: 30px 0px;
   position: relative;
-  height: fit-content;
-  top: 80px; // change value to slide vertically
-  left: -400px; // change value to slide horizontally
+  height: 150px;
+  top: 150px; // change value to slide vertically
+  left: -30px; // change value to slide horizontally -350 - -300
+  transition-property: left;
+  transition-duration: 0.3s;
   display: flex;
   background-color: $menuBGColor;
   border-color: $menuBorderColor;
   align-items: center;
-  z-index: 0;
+
+  .links-about {
+    position: absolute;
+    left: 7px;
+    bottom: 50px;
+    font-size: 1rem;
+    writing-mode: vertical-lr;
+    text-orientation: upright;
+  }
 
   .nav-arrow {
-    left: 102%;
+    left: 110%;
   }
 
   .link-arrow {
@@ -412,5 +434,49 @@ a {
   p {
     padding-left: 10px;
     font-size: 0.5rem;
+  }
+}
+
+.modal-contact {
+  display: grid;
+  width: 350px;
+
+  h2,
+  p {
+    text-align: center;
+  }
+
+  p {
+    margin-top: 10px;
+  }
+}
+
+.contact-field {
+  font-size: 0.8rem;
+  display: flex;
+  margin-top: 20px;
+  border-radius: 2px;
+  width: 100%;
+  // height: 20px;
+}
+
+.contact-btn-submit,
+.contact-btn-reset {
+  margin-top: 10px;
+  padding: 0px 5px;
+  border-radius: 5px;
+}
+
+.modal-about {
+  display: grid;
+  width: 500px;
+  text-align: center;
+
+  h2 {
+    margin-top: 10px;
+  }
+
+  p {
+    margin-top: 20px;
   }
 }

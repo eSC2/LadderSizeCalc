@@ -3,6 +3,8 @@
 import { calcResult } from "./models/calcDelegate.js";
 import { printResult } from "./views/viewPrint.js";
 
+import * as viewNavLinks from "./views/viewNavLink.js";
+
 import viewInfo from "./views/viewInfo.js";
 import viewCalc from "./views/viewCalc.js";
 import viewResult from "./views/viewResult.js";
@@ -52,6 +54,7 @@ const savePrint = function (data) {
 const init = function () {
   // viewInfo._renderData(viewInfo._generateInfoLadder());
   viewInfo._renderActiveTab(renderLadderCalc, clearError);
+  viewNavLinks.addHandlerNavLinks();
   addInputHandlers();
   // viewResult._getParentEl();
 };

@@ -16,7 +16,9 @@ h2 {
 
 p,
 nav,
-li {
+li,
+input,
+textarea {
   font-size: 0.8rem;
   line-height: 1.6;
   word-spacing: 0.2rem;
@@ -29,16 +31,16 @@ li {
 }
 
 a {
-  color: rgba(0, 0, 0, 0.3);
+  color: rgba(0, 0, 0, 0.4);
   background-color: transparent;
   text-decoration: none;
   font-weight: 600;
 }
 a:active {
-  color: rgba(0, 0, 0, 0.3);
+  color: rgba(0, 0, 0, 0.4);
 }
 a:visited {
-  color: rgba(0, 0, 0, 0.3);
+  color: rgba(0, 0, 0, 0.4);
 }
 
 .main-page {
@@ -210,6 +212,7 @@ a:visited {
 .nav-background {
   grid-area: navi;
   overflow: hidden;
+  position: relative;
 }
 .nav-background .nav-background-img {
   position: relative;
@@ -218,10 +221,10 @@ a:visited {
 }
 .nav-background .nav-citation-text {
   font-size: 10px;
-  position: fixed;
-  left: 12rem;
-  bottom: 0;
-  z-index: auto;
+  position: absolute;
+  right: 10px;
+  bottom: 5px;
+  z-index: 0;
 }
 
 .nav-background-fade {
@@ -240,25 +243,34 @@ a:visited {
 
 .nav-menu {
   grid-area: navi;
-  border-right-style: solid;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
-  z-index: 1;
-  padding: 30px 15px;
+  z-index: 0;
+  padding: 30px 0px;
   position: relative;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  top: 80px;
-  left: 400px;
+  height: 150px;
+  width: 30px;
+  top: 150px;
+  left: 350px;
+  transition-property: left;
+  transition-duration: 0.3s;
   display: flex;
   background-color: white;
   border-color: rgba(220, 220, 220, 0.5);
   align-items: center;
-  z-index: 0;
+}
+.nav-menu .menu-contact {
+  position: absolute;
+  left: 7px;
+  bottom: 35px;
+  font-size: 1rem;
+  -ms-writing-mode: tb-lr;
+      writing-mode: vertical-lr;
+  -webkit-text-orientation: upright;
+          text-orientation: upright;
 }
 .nav-menu .nav-arrow {
-  right: 102%;
+  right: 110%;
 }
 .nav-menu .menu-arrow {
   display: flex;
@@ -270,6 +282,7 @@ a:visited {
 .links-background {
   grid-area: link;
   overflow: hidden;
+  position: relative;
 }
 .links-background .links-background-img {
   position: relative;
@@ -280,10 +293,10 @@ a:visited {
 }
 .links-background .links-citation-text {
   font-size: 10px;
-  position: fixed;
-  right: 12rem;
-  bottom: 0;
-  z-index: auto;
+  position: absolute;
+  left: 10px;
+  bottom: 5px;
+  z-index: 0;
 }
 
 .links-background-fade {
@@ -293,25 +306,34 @@ a:visited {
 
 .links-menu {
   grid-area: link;
-  border-left-style: solid;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
-  z-index: 1;
-  padding: 30px 15px;
+  z-index: 0;
+  width: 30px;
+  padding: 30px 0px;
   position: relative;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  top: 80px;
-  left: -400px;
+  height: 150px;
+  top: 150px;
+  left: -30px;
+  transition-property: left;
+  transition-duration: 0.3s;
   display: flex;
   background-color: white;
   border-color: rgba(220, 220, 220, 0.5);
   align-items: center;
-  z-index: 0;
+}
+.links-menu .links-about {
+  position: absolute;
+  left: 7px;
+  bottom: 50px;
+  font-size: 1rem;
+  -ms-writing-mode: tb-lr;
+      writing-mode: vertical-lr;
+  -webkit-text-orientation: upright;
+          text-orientation: upright;
 }
 .links-menu .nav-arrow {
-  left: 102%;
+  left: 110%;
 }
 .links-menu .link-arrow {
   display: flex;
@@ -342,4 +364,43 @@ a:visited {
 .footer p {
   padding-left: 10px;
   font-size: 0.5rem;
+}
+
+.modal-contact {
+  display: grid;
+  width: 350px;
+}
+.modal-contact h2,
+.modal-contact p {
+  text-align: center;
+}
+.modal-contact p {
+  margin-top: 10px;
+}
+
+.contact-field {
+  font-size: 0.8rem;
+  display: flex;
+  margin-top: 20px;
+  border-radius: 2px;
+  width: 100%;
+}
+
+.contact-btn-submit,
+.contact-btn-reset {
+  margin-top: 10px;
+  padding: 0px 5px;
+  border-radius: 5px;
+}
+
+.modal-about {
+  display: grid;
+  width: 500px;
+  text-align: center;
+}
+.modal-about h2 {
+  margin-top: 10px;
+}
+.modal-about p {
+  margin-top: 20px;
 }/*# sourceMappingURL=style.css.map */
