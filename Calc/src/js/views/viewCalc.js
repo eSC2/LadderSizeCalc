@@ -1,16 +1,7 @@
 "use strict";
 
 import View from "./view.js";
-// import * as infoText from "../helpers.js";
 import * as infoText from "../views/viewHTMLData.js";
-
-/*
-export default class View {
-  _clear() {
-    this._parentElement.innerHTML = "";
-  }
-}
-*/
 
 class viewCalc extends View {
   _parentElement = document.querySelector(".ladder-calc-subcontent");
@@ -44,7 +35,7 @@ class viewCalc extends View {
     `;
   }
 
-  stdInputFieldColor() {
+  _stdInputFieldColor() {
     const inputField = this._getUserInput();
 
     inputField.forEach(function (el) {
@@ -58,7 +49,7 @@ class viewCalc extends View {
     });
   }
 
-  addHandlerCalculate(handler) {
+  _addHandlerCalculate(handler) {
     const btnCalc = document.querySelector(".btn-calc");
 
     btnCalc.addEventListener("click", function () {
@@ -66,7 +57,7 @@ class viewCalc extends View {
     });
   }
 
-  addHandlerCalcEnter(handler) {
+  _addHandlerCalcEnter(handler) {
     const inputField = this._getUserInput();
 
     inputField.forEach(function (el) {

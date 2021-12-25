@@ -317,12 +317,11 @@ a {
   height: 150px;
   width: 30px;
   top: 150px; // change value to slide vertically
-  left: 350px; // change value to slide horizontally 320-350
+  left: 350px; // change value to slide horizontally 315-350
   transition-property: left;
   transition-duration: 0.3s;
   display: flex;
   background-color: $menuBGColor;
-  border-color: $menuBorderColor;
   align-items: center;
 
   .menu-contact {
@@ -388,7 +387,6 @@ a {
   transition-duration: 0.3s;
   display: flex;
   background-color: $menuBGColor;
-  border-color: $menuBorderColor;
   align-items: center;
 
   .links-about {

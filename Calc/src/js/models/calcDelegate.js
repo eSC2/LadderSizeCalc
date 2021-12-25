@@ -6,25 +6,25 @@ import createNewStep from "./classStepLadder.js";
 import createNewStair from "./classStair.js";
 
 // Delegate calculation
-export const calcResult = function (data, error, result, activeTab) {
+export const _calcResult = function (data, error, result, activeTab) {
   const createResultArr = [createNewRung, createNewStep, createNewStair];
 
-  const chkEmptyResult = validateInput.chkEmptyInput(data, error);
+  const chkEmptyResult = validateInput._chkEmptyInput(data, error);
   if (chkEmptyResult == undefined) {
     return;
   }
 
-  const chkCompTab = validateInput.chkActiveTab(activeTab);
+  const chkCompTab = validateInput._chkActiveTab(activeTab);
   if (chkCompTab == undefined) {
     return;
   }
 
-  const chkCompResult = validateInput.chkCompliance(chkEmptyResult, error, chkCompTab);
+  const chkCompResult = validateInput._chkCompliance(chkEmptyResult, error, chkCompTab);
   if (chkCompResult == undefined) {
     return;
   }
 
-  const finalChkAddID = validateInput.addTabID(chkCompResult, activeTab);
+  const finalChkAddID = validateInput._addTabID(chkCompResult, activeTab);
   if (finalChkAddID == undefined) {
     return;
   }

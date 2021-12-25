@@ -1,6 +1,6 @@
 "use strict";
 
-export const printResult = function (data) {
+export const _printResult = function (data) {
   const printArea = window.open();
 
   printArea.document.write("<title>Ladder Size Calculator</title>");

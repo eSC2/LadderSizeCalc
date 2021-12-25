@@ -1,7 +1,7 @@
 "use strict";
 
-import { calcResult } from "./models/calcDelegate.js";
-import { printResult } from "./views/viewPrint.js";
+import { _calcResult } from "./models/calcDelegate.js";
+import { _printResult } from "./views/viewPrint.js";
 
 import * as viewNavLinks from "./views/viewNavLink.js";
 
@@ -11,51 +11,51 @@ import viewResult from "./views/viewResult.js";
 
 // import viewMaterials from "./views/viewMaterials.js";
 
-const calculateLadder = function () {
+const _calculateLadder = function () {
   const userInput = viewCalc._getUserInput();
   const activeTab = viewInfo._getCurrentActiveTab();
 
-  clearError();
-  calcResult(userInput, renderError, renderResult, activeTab);
+  _clearError();
+  _calcResult(userInput, _renderError, _renderResult, activeTab);
 };
 
-const addInputHandlers = function () {
-  viewCalc.addHandlerCalculate(calculateLadder);
-  viewCalc.addHandlerCalcEnter(calculateLadder);
-  viewCalc.stdInputFieldColor();
+const _addInputHandlers = function () {
+  viewCalc._addHandlerCalculate(_calculateLadder);
+  viewCalc._addHandlerCalcEnter(_calculateLadder);
+  viewCalc._stdInputFieldColor();
 };
 
-const renderLadderCalc = function () {
+const _renderLadderCalc = function () {
   viewCalc._renderData(viewCalc._renderCalculator());
-  addInputHandlers();
+  _addInputHandlers();
 };
 
-const renderResult = function (data) {
+const _renderResult = function (data) {
   viewCalc._clearInputField();
   viewResult._renderData(viewResult._renderResult(data));
-  viewResult.addHandlerBack(renderLadderCalc);
-  viewResult.addHandlerSave(savePrint);
+  viewResult._addHandlerBack(_renderLadderCalc);
+  viewResult._addHandlerSave(_savePrint);
   // viewMaterials._renderData(viewMaterials._renderMaterials(data));
 };
 
-const renderError = function () {
+const _renderError = function () {
   viewCalc._inputTextErrColor();
   viewResult._renderData(viewResult._renderError());
 };
 
-const clearError = function () {
+const _clearError = function () {
   viewResult._renderData(viewResult._clearError());
 };
 
-const savePrint = function (data) {
-  printResult(data);
+const _savePrint = function (data) {
+  _printResult(data);
 };
 
 const init = function () {
   // viewInfo._renderData(viewInfo._generateInfoLadder());
-  viewInfo._renderActiveTab(renderLadderCalc, clearError);
-  viewNavLinks.addHandlerNavLinks();
-  addInputHandlers();
+  viewInfo._renderActiveTab(_renderLadderCalc, _clearError);
+  viewNavLinks._addHandlerNavLinks();
+  _addInputHandlers();
   // viewResult._getParentEl();
 };
 

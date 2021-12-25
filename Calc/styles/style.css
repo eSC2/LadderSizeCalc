@@ -256,7 +256,6 @@ a:visited {
   transition-duration: 0.3s;
   display: flex;
   background-color: white;
-  border-color: rgba(220, 220, 220, 0.5);
   align-items: center;
 }
 .nav-menu .menu-contact {
@@ -319,7 +318,6 @@ a:visited {
   transition-duration: 0.3s;
   display: flex;
   background-color: white;
-  border-color: rgba(220, 220, 220, 0.5);
   align-items: center;
 }
 .links-menu .links-about {

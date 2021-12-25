@@ -2,14 +2,6 @@
 
 import View from "./view.js";
 
-/*
-export default class View {
-  _clear() {
-    this._parentElement.innerHTML = "";
-  }
-}
-*/
-
 class viewMaterials extends View {
   _parentElement = document.querySelector(".materials-list");
 

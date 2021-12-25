@@ -38,7 +38,7 @@ class viewResult extends View {
     return "";
   }
 
-  addHandlerBack(handler) {
+  _addHandlerBack(handler) {
     const btnBack = document.querySelector(".btn-back");
 
     btnBack.addEventListener("click", function () {
@@ -46,7 +46,7 @@ class viewResult extends View {
     });
   }
 
-  addHandlerSave(handler) {
+  _addHandlerSave(handler) {
     const printArea = document.querySelector(".ladder-calc-subcontent");
     const btnSave = document.querySelector(".btn-save");
 
