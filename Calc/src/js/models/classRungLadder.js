@@ -3,6 +3,7 @@
 import DefaultLadderClass from "./classDefaultLadderStair.js";
 import { complianceDataRung } from "../data/complianceData.js";
 
+// Create rung ladder subclass
 export default class RungLadder extends DefaultLadderClass {
   constructor(vHeight, width, pitch, activeTab) {
     super(vHeight, width, pitch, activeTab);

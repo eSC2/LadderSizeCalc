@@ -1,5 +1,6 @@
 "use strict";
 
+// Print content
 export const _printResult = function (data) {
   const printArea = window.open();
 

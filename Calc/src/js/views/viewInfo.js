@@ -3,21 +3,25 @@
 import View from "./view.js";
 import * as ladderText from "../views/viewHTMLData.js";
 
+// Create viewInfo subclass
 class viewInfo extends View {
   _parentElement = document.querySelector(".ladder-calc-subcontent");
 
-  _generateInfoLadder() {
-    return `    
-      ${ladderText.infoRungLadder}
-      `;
-  }
+  // // Render rung ladder info
+  // _generateInfoLadder() {
+  //   return `
+  //     ${ladderText.infoRungLadder}
+  //     `;
+  // }
 
-  _generateInfoStep() {
-    return `    
-      ${ladderText.infoStepLadder}
-      `;
-  }
+  // // Render step ladder info
+  // _generateInfoStep() {
+  //   return `
+  //     ${ladderText.infoStepLadder}
+  //     `;
+  // }
 
+  // Get current active tab ID
   _getCurrentActiveTab() {
     const chkActiveTab = document.querySelectorAll(".btn-tabs");
     let activeTab = "";
@@ -30,6 +34,7 @@ class viewInfo extends View {
     return activeTab;
   }
 
+  // Render ladder info corresponding to active tab
   _renderActiveTab(renderCalc, clearError) {
     const activeTabs = document.querySelectorAll(".btn-tabs");
 

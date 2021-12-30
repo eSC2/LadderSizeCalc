@@ -1,15 +1,12 @@
 "use strict";
 
-import * as compData from "../data/complianceData.js";
-
+// Create default ladder class
 export default class DefaultLadderStair {
   constructor(vHeight, width, pitch, activeTab) {
     this.verticalHeight = vHeight;
     this.ladderWidth = width;
     this.ladderPitch = pitch;
     this.tabID = activeTab;
-
-    // this._fillData();
   }
 
   // Calculate radians

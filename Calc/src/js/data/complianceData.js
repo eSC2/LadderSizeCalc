@@ -1,6 +1,6 @@
 "use strict";
 
-// Ladder Compliance to AS1657
+// Ladder Compliance Data to AS1657
 export const complianceDataRung = {
   minMaxVHeight: [300, 6000], // Rung Ladder Min/Max Vertical Height
   ladderWidthRange: [375, 525], // Rung Ladder Min/Max Width
@@ -8,6 +8,7 @@ export const complianceDataRung = {
   maxRungSpc: 300, // Max rung spacing
 };
 
+// Step Ladder Compliance Data to AS1657
 export const complianceDataStep = {
   minMaxVHeight: [300, 6000], // Step Ladder Min/Max Vertical Height
   stepWidthRange: [450, 750], // Step Ladder Min/Max Width
@@ -16,6 +17,7 @@ export const complianceDataStep = {
   maxStepSpc: 300, // Max step spacing
 };
 
+// Stair Compliance Data to AS1657
 export const complianceDataStair = {
   minMaxVHeight: [300, 4000], // Stair Min/Max Vertical Height
   stairWidthRange: [600], // Stair Min/Max Width
