@@ -26,6 +26,14 @@ const _addInputHandlers = function () {
   viewCalc._stdInputFieldColor();
 };
 
+const _addNavLinksHandlers = function () {
+  viewNavLinks._addHandlerNavLinks();
+  viewNavLinks._openModalAbout();
+  viewNavLinks._openModalContact();
+
+  viewContact._submitContactBtn();
+};
+
 const _renderLadderCalc = function () {
   viewCalc._renderData(viewCalc._renderCalculator());
   _addInputHandlers();
@@ -53,10 +61,8 @@ const _savePrint = function (data) {
 
 const init = function () {
   viewInfo._renderActiveTab(_renderLadderCalc, _clearError);
-  viewNavLinks._addHandlerNavLinks();
-  viewNavLinks._openModalAbout();
-  viewNavLinks._openModalContact();
-  viewContact._submitContact();
+
+  _addNavLinksHandlers();
   _addInputHandlers();
 };
 

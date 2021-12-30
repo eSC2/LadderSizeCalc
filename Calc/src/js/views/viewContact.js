@@ -14,7 +14,7 @@ export const _emptyContactForm = function () {
   cFormInputField.forEach((e) => (e.value = ""));
 };
 
-export const _submitContact = function () {
+export const _submitContactBtn = function () {
   btnContact.addEventListener("submit", function () {
     _emptyContactForm();
     _toggleContactThanks();
