@@ -4,6 +4,7 @@ import { _calcResult } from "./models/calcDelegate.js";
 import { _printResult } from "./views/viewPrint.js";
 
 import * as viewNavLinks from "./views/viewNavLink.js";
+import * as viewContact from "./views/viewContact.js";
 
 import viewInfo from "./views/viewInfo.js";
 import viewCalc from "./views/viewCalc.js";
@@ -35,7 +36,6 @@ const _renderResult = function (data) {
   viewResult._renderData(viewResult._renderResult(data));
   viewResult._addHandlerBack(_renderLadderCalc);
   viewResult._addHandlerSave(_savePrint);
-  // viewMaterials._renderData(viewMaterials._renderMaterials(data));
 };
 
 const _renderError = function () {
@@ -52,11 +52,12 @@ const _savePrint = function (data) {
 };
 
 const init = function () {
-  // viewInfo._renderData(viewInfo._generateInfoLadder());
   viewInfo._renderActiveTab(_renderLadderCalc, _clearError);
   viewNavLinks._addHandlerNavLinks();
+  viewNavLinks._openModalAbout();
+  viewNavLinks._openModalContact();
+  viewContact._submitContact();
   _addInputHandlers();
-  // viewResult._getParentEl();
 };
 
 init();

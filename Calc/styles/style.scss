@@ -331,6 +331,7 @@ a {
     font-size: 1rem;
     writing-mode: vertical-lr;
     text-orientation: upright;
+    cursor: pointer;
   }
 
   .nav-arrow {
@@ -396,6 +397,7 @@ a {
     font-size: 1rem;
     writing-mode: vertical-lr;
     text-orientation: upright;
+    cursor: pointer;
   }
 
   .nav-arrow {
@@ -435,18 +437,74 @@ a {
   }
 }
 
-.modal-contact {
-  display: grid;
-  width: 350px;
+.hidden {
+  display: none;
+}
 
-  h2,
+.modal-overlay-about,
+.modal-overlay-contact {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(3px);
+  z-index: 4;
+}
+
+.modal-close-btn-about,
+.modal-close-btn-contact {
+  position: absolute;
+  right: 0.8rem;
+  top: 0.6rem;
+  cursor: pointer;
+  border: none;
+  font-size: 2rem;
+  background-color: transparent;
+}
+
+.modal-about {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  text-align: center;
+  background-color: $bgColor;
+  padding: 2rem;
+  border-radius: 10px;
+  z-index: 5;
+
   p {
-    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
   }
+}
+
+.modal-contact {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 450px;
+  width: 350px;
+  background-color: white;
+  padding: 40px;
+  border-radius: 10px;
+  z-index: 5;
+  text-align: center;
 
   p {
     margin-top: 10px;
   }
+}
+
+.contact-thanks {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 6;
 }
 
 .contact-field {
@@ -455,26 +513,10 @@ a {
   margin-top: 20px;
   border-radius: 2px;
   width: 100%;
-  // height: 20px;
 }
 
-.contact-btn-submit,
-.contact-btn-reset {
-  margin-top: 10px;
+.contact-btn {
+  margin-top: 30px;
   padding: 0px 5px;
-  border-radius: 5px;
-}
-
-.modal-about {
-  display: grid;
-  width: 500px;
-  text-align: center;
-
-  h2 {
-    margin-top: 10px;
-  }
-
-  p {
-    margin-top: 20px;
-  }
+  border-radius: 3px;
 }

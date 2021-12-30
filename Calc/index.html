@@ -19,10 +19,7 @@
       <div class="nav-arrow nav-arrow-menu">
         <img class="menu-arrow" alt="image arrow" src="./src/img/arrow.png" />
       </div>
-
-      <nav class="nav-menu-btns">
-        <a class="menu-contact">Contact</a>
-      </nav>
+      <a class="menu-contact">Contact</a>
     </div>
 
     <div class="main-content">
@@ -126,16 +123,47 @@
     </div>
     <div class="links-background-fade"></div>
     <div class="links-menu">
-      <nav class="nav-links-btns">
-        <a class="links-about">About</a>
-      </nav>
+      <a class="links-about">About</a>
       <div class="nav-arrow nav-arrow-links">
         <img class="link-arrow" alt="image arrow" src="./src/img/arrow.png" />
       </div>
     </div>
-  </body>
 
-  <script type="module" src="./src/js/controller.js"></script>
+    <!-- Modals -->
+
+    <div class="modal-about hidden">
+      <button class="modal-close-btn-about">&times;</button>
+      <h2>About</h2>
+      <p>
+        Ladder Size Calculator is a simple tool made to quickly confirm the ladder dimension in accordance to Australian Standard AS1657. However, as the Standard tend to be reviewed and amend over
+        time, the result given may be outdated. It is highly recommended that the final result to be confirmend by certified height safety system supplier. This site is not liable for any losses,
+        damages or compliance issues that incurred in connection with its tool.
+      </p>
+    </div>
+
+    <div class="modal-overlay-about hidden"></div>
+
+    <div class="modal-contact hidden">
+      <button class="modal-close-btn-contact">&times;</button>
+      <div class="contact-form">
+        <h2>Contact me</h2>
+        <p>Please feel free to contact me and I'll respond as soon as possible.</p>
+        <form class="contact-form-input" id="fs-frm" accept-charset="utf-8" action="https://formspree.io/f/xoqrveal" method="post">
+          <input type="text" class="contact-field contact-name" placeholder="Name" name="_name" required />
+          <input type="email" class="contact-field contact-mail" placeholder="E-mail address" name="_sender" required />
+          <textarea class="contact-field contact-msg" rows="10" placeholder="Message.." name="_message" required></textarea>
+          <input type="submit" class="contact-btn" value="Send Message" />
+        </form>
+      </div>
+      <div class="contact-thanks hidden">
+        <h3 class="thanks-msg">Message received. Thank you. I'll respond as soon as possible.</h3>
+      </div>
+    </div>
+
+    <div class="modal-overlay-contact hidden"></div>
+
+    <script type="module" src="./src/js/controller.js"></script>
+  </body>
 
   <!-- <footer class="footer">
     <p>Author: ecSC2</p>
