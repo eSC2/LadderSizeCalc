@@ -1,0 +1,522 @@
+$bgColor: white;
+$mainPageBGColor: rgb(254, 254, 254);
+$textColor: rgba(0, 0, 0, 0.85);
+$textBGColor: transparent;
+$linkTxtColor: rgba(0, 0, 0, 0.4);
+$menuBGColor: white;
+$menuBorderColor: rgba(220, 220, 220, 0.5);
+$menuCornerRadius: 20px;
+$menuMargin: 50% 0%;
+$tabBorderBaseColor: rgba(255, 0, 0, 0.8);
+$tabHoverBGColor: rgba(255, 0, 0, 0.5);
+$zIndexMainGrid: 2;
+$zIndexMenuGrid: 0;
+$linearGradient: rgba(120, 120, 120, 0.2) 15%, rgba(254, 254, 254, 1) 90%;
+
+* {
+  // background-color: $bgColor;
+  font-family: "Montserrat", sans-serif;
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+  color: $textColor;
+}
+
+h1 {
+  font-weight: bold;
+}
+
+h2 {
+  padding-top: 5px;
+}
+
+p,
+nav,
+li,
+input,
+textarea {
+  font-size: 0.8rem;
+  line-height: 1.6;
+  word-spacing: 0.2rem;
+  background-color: $textBGColor;
+}
+
+li {
+  list-style-type: none;
+  line-height: 2;
+}
+
+a {
+  color: $linkTxtColor;
+  background-color: $textBGColor;
+  text-decoration: none;
+  // font-size: 1.2rem;
+  font-weight: 600;
+
+  &:active {
+    color: $linkTxtColor;
+  }
+
+  &:visited {
+    color: $linkTxtColor;
+  }
+}
+
+.main-page {
+  background-color: $mainPageBGColor;
+  display: grid;
+  height: 100vh;
+  overflow: hidden;
+  grid-template-columns: 1fr 350px minmax(600px, 800px) 350px 1fr;
+  grid-template-areas: ". navi main link .";
+
+  .main-content::-webkit-scrollbar {
+    width: 8px;
+    // background-color: red;
+  }
+
+  .main-content::-webkit-scrollbar-thumb {
+    background-color: $menuBorderColor;
+  }
+
+  .main-content {
+    z-index: 1;
+    background-color: $bgColor;
+    grid-area: main;
+    display: grid;
+    height: auto;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    grid-template-rows: 90px 80px 60px 50px 1fr;
+    grid-template-areas:
+      "header"
+      "info"
+      "subhead"
+      "tabs"
+      "subcontent";
+
+    .ladder-calc-header {
+      grid-area: header;
+      padding: 10px 20px;
+      z-index: $zIndexMainGrid;
+    }
+
+    .ladder-calc-info {
+      grid-area: info;
+      padding: 0px 20px;
+      z-index: $zIndexMainGrid;
+    }
+
+    .ladder-calc-subhead {
+      grid-area: subhead;
+      padding: 30px 0px 0px 20px;
+      z-index: $zIndexMainGrid;
+    }
+
+    .ladder-calc-tabs {
+      grid-area: tabs;
+      padding-left: 20px;
+      display: flex;
+      align-content: flex-end;
+      z-index: $zIndexMainGrid;
+
+      .btn-tabs {
+        font-size: 0.9rem;
+        padding: 7px;
+        margin: 15px 2px 5px;
+        background-color: transparent;
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
+        border-bottom: none;
+        border-style: none;
+        border-top-style: solid;
+        border-right-style: solid;
+        transition: background-color 0.1s ease-in-out;
+
+        &:first-of-type {
+          margin-left: 0px;
+        }
+
+        // &:nth-child(1) {
+        //   border-bottom: solid;
+        //   border-bottom-color: $tabBorderBaseColor;
+        // }
+
+        &:hover {
+          background-color: $tabHoverBGColor;
+        }
+
+        &:active {
+          background-color: red;
+          transition: background-color 0s;
+        }
+      }
+
+      .active-tab {
+        border-bottom: solid;
+        border-bottom-color: $tabBorderBaseColor;
+      }
+    }
+  }
+}
+
+.ladder-calc-subcontent {
+  padding: 5px 20px 0px 20px;
+  grid-area: subcontent;
+  z-index: $zIndexMainGrid;
+  display: grid;
+  max-width: 100%;
+  height: auto;
+
+  grid-template-columns: 35% 1fr;
+  grid-template-rows: auto 300px auto;
+  grid-template-areas:
+    "subinfo subinfo"
+    "calc-result img"
+    "message img";
+
+  .subcontent-sub-info {
+    grid-area: subinfo;
+    overflow: auto;
+
+    .tab1 {
+      display: block;
+    }
+
+    .tab2 {
+      display: none;
+    }
+
+    .tab3 {
+      display: none;
+    }
+  }
+
+  .subcontent-calc_result {
+    grid-area: calc-result;
+    display: block;
+    place-self: start center;
+
+    .subcontent-inputFields {
+      padding-top: 25px;
+
+      .input-field {
+        height: 1.5rem;
+        width: 160px;
+        margin-bottom: 10px;
+        font-size: 1rem;
+        color: $textColor;
+        padding-left: 2px;
+      }
+    }
+
+    .subcontent-result {
+      ul {
+        padding: 25px 0px 0px 20px;
+      }
+
+      p {
+        font-size: 9px;
+        padding-left: 10px;
+      }
+    }
+  }
+
+  .subcontent-calculator-btn {
+    padding-top: 10px;
+    text-align: center;
+  }
+
+  .subcontent-image {
+    grid-area: img;
+
+    .result-img {
+      max-width: 100%;
+      height: auto;
+      place-self: center;
+    }
+  }
+
+  .subcontent-error-message {
+    grid-area: message;
+    place-self: start center;
+    text-align: center;
+
+    p {
+      color: red;
+    }
+  }
+}
+
+.btn-calc,
+.btn-back,
+.btn-save {
+  font-size: 0.8rem;
+  padding: 5px;
+}
+
+.result-btn {
+  display: block;
+  position: relative;
+  text-align: center;
+
+  .btn-back {
+    margin-right: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .btn-save {
+    margin-left: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+.nav-background {
+  grid-area: navi;
+  overflow: hidden;
+  position: relative;
+
+  .nav-background-img {
+    position: relative;
+    left: -45rem;
+    z-index: -1;
+  }
+
+  .nav-citation-text {
+    font-size: 10px;
+    position: absolute;
+    right: 10px;
+    bottom: 5px;
+    z-index: 0;
+  }
+}
+
+.nav-background-fade {
+  grid-area: navi;
+  background: linear-gradient(to left, $linearGradient);
+}
+
+.nav-arrow:hover {
+  cursor: pointer;
+}
+
+.nav-arrow {
+  background: transparent;
+  position: absolute;
+}
+
+.nav-menu {
+  grid-area: navi;
+  border-top-left-radius: $menuCornerRadius;
+  border-bottom-left-radius: $menuCornerRadius;
+  z-index: $zIndexMenuGrid;
+  padding: 30px 0px;
+  position: relative;
+  height: 150px;
+  width: 30px;
+  top: 150px; // change value to slide vertically
+  left: 350px; // change value to slide horizontally 315-350
+  transition-property: left;
+  transition-duration: 0.3s;
+  display: flex;
+  background-color: $menuBGColor;
+  align-items: center;
+
+  .menu-contact {
+    position: absolute;
+    left: 7px;
+    bottom: 35px;
+    font-size: 1rem;
+    writing-mode: vertical-lr;
+    text-orientation: upright;
+    cursor: pointer;
+  }
+
+  .nav-arrow {
+    right: 110%;
+  }
+
+  .menu-arrow {
+    display: flex;
+    position: center;
+    background: transparent;
+    height: 30px;
+  }
+}
+
+.links-background {
+  grid-area: link;
+  overflow: hidden;
+  position: relative;
+
+  .links-background-img {
+    position: relative;
+    overflow: hidden;
+    transform: scaleX(-1);
+    left: -12rem;
+    z-index: -1;
+  }
+
+  .links-citation-text {
+    font-size: 10px;
+    position: absolute;
+    left: 10px;
+    bottom: 5px;
+    z-index: 0;
+  }
+}
+
+.links-background-fade {
+  grid-area: link;
+  background: linear-gradient(to right, $linearGradient);
+}
+
+.links-menu {
+  grid-area: link;
+  border-top-right-radius: $menuCornerRadius;
+  border-bottom-right-radius: $menuCornerRadius;
+  z-index: $zIndexMenuGrid;
+  width: 30px;
+  padding: 30px 0px;
+  position: relative;
+  height: 150px;
+  top: 150px; // change value to slide vertically
+  left: -30px; // change value to slide horizontally -350 - -300
+  transition-property: left;
+  transition-duration: 0.3s;
+  display: flex;
+  background-color: $menuBGColor;
+  align-items: center;
+
+  .links-about {
+    position: absolute;
+    left: 7px;
+    bottom: 50px;
+    font-size: 1rem;
+    writing-mode: vertical-lr;
+    text-orientation: upright;
+    cursor: pointer;
+  }
+
+  .nav-arrow {
+    left: 110%;
+  }
+
+  .link-arrow {
+    display: flex;
+    position: center;
+    background: transparent;
+    height: 30px;
+    transform: rotate(180deg);
+  }
+}
+
+.menu-link-container {
+  padding-left: 20px;
+}
+
+.menu-sub,
+.link-sub {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 400;
+  padding-top: 5px;
+}
+
+.footer {
+  grid-area: footer;
+  display: flex;
+  justify-content: center start;
+  z-index: $zIndexMainGrid;
+
+  p {
+    padding-left: 10px;
+    font-size: 0.5rem;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.modal-overlay-about,
+.modal-overlay-contact {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(3px);
+  z-index: 4;
+}
+
+.modal-close-btn-about,
+.modal-close-btn-contact {
+  position: absolute;
+  right: 0.8rem;
+  top: 0.6rem;
+  cursor: pointer;
+  border: none;
+  font-size: 2rem;
+  background-color: transparent;
+}
+
+.modal-about {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  text-align: center;
+  background-color: $bgColor;
+  padding: 2rem;
+  border-radius: 10px;
+  z-index: 5;
+
+  p {
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+}
+
+.modal-contact {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 450px;
+  width: 350px;
+  background-color: white;
+  padding: 40px;
+  border-radius: 10px;
+  z-index: 5;
+  text-align: center;
+
+  p {
+    margin-top: 10px;
+  }
+}
+
+.contact-thanks {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 6;
+}
+
+.contact-field {
+  font-size: 0.8rem;
+  display: flex;
+  margin-top: 20px;
+  border-radius: 2px;
+  width: 100%;
+}
+
+.contact-btn {
+  margin-top: 30px;
+  padding: 0px 5px;
+  border-radius: 3px;
+}

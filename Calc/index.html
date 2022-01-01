@@ -1,73 +1,174 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="en-US">
   <head>
-    <title>Ladder/Stair Calc</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>Ladder Size Calculator</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Eric Chan (ecSC2)" />
+    <meta name="description" content="The Ladder Size Calculator provides quick calculation of ladder dimension in accordance to Australian Standard AS1657" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
   </head>
 
-  <body>
-    <h1>Ladder/Stair Calculator</h1>
-    <header>
-      <div>
-        <h3>Choose ladder type from dropdown menu and Insert data to calculate ladder/stair height to AS1657 (in millimeter)</h3>
+  <body class="main-page">
+    <div class="nav-background">
+      <img class="nav-background-img" src="./src/img/BGIMGrungLadder.jpg" alt="vertical rung ladder" />
+      <p class="nav-citation-text">Image via <a href="https://www.monkeytoe.co.nz/">Monkeytoe NZ</a></p>
+    </div>
+    <div class="nav-background-fade"></div>
+    <div class="nav-menu">
+      <div class="nav-arrow nav-arrow-menu">
+        <img class="menu-arrow" alt="image arrow" src="./src/img/arrow.png" />
       </div>
-    </header>
-
-    <div class="info-view">
-      <!-- <h4>Info Text Here</h4> -->
+      <a class="menu-contact">Contact</a>
     </div>
 
-    <div class="dropdown-ladder-container">
-      <button class="dropdown-ladder-btn">Ladder</button>
-      <div class="dropdown-ladder-content">
-        <p class="dropdown-txt">Rung Ladder</p>
-        <br />
-        <p class="dropdown-txt">Step Ladder</p>
-        <br />
-        <p class="dropdown-txt">Stair</p>
-      </div>
-    </div>
+    <div class="main-content">
+      <header class="ladder-calc-header">
+        <h1>LADDER SIZE CALCULATOR</h1>
+        <h2>FOR HEIGHT SAFETY SYSTEM</h2>
+      </header>
 
-    <div class="container-calculator">
-      <!-- 
-        <div class="calc-rungladder">
-          <h2>Rung Ladder Calculator</h2>
-          <div class="calc-view">
-            <ul>
-              <li>Vertical Height</li>
-              <input class="input-field" vHeight />
-              <li>Ladder Width</li>
-              <input class="input-field" ladderWidth />
-              <li>Ladder Pitch</li>
-              <input class="input-field" ladderPitch />
-            </ul>
-            <button class="btn-submit">Calculate</button>
+      <div class="ladder-calc-info">
+        <p>
+          This calculator provides a quick ladder size calculation in accordance to Australian Standard. Results given is for basic guidance only. This site is not liable for any losses, damages or
+          compliance issues that inccured in connection with its tools. Seeking professional advises and certification from certified height safety supplier is highly recommended.
+        </p>
+      </div>
+
+      <div class="ladder-calc-subhead">
+        <h2>CHOOSE LADDER TYPE</h2>
+      </div>
+
+      <div class="ladder-calc-tabs">
+        <button class="btn-tabs active-tab" id="0">RUNG LADDER</button>
+        <button class="btn-tabs" id="1">STEP LADDER</button>
+        <button class="btn-tabs" id="2">STAIR</button>
+      </div>
+
+      <div class="ladder-calc-subcontent">
+        <div class="subcontent-sub-info tab0" style="display: block">
+          <p>
+            A twin-stile rung ladder comprises of two stiles and rungs that assists user ascending/descending between levels. It is to be inclined between 70° and 90°, and can be both portable or
+            permanently fixed to a structure. The Australia Standard AS1657 sets out requirements for the design, selection, construction and installation of ladder and is to be strictly followed for
+            compliances. Please contact certified supplier/installer or refer to Australian Standard AS1657 for more information.
+          </p>
+          <br />
+          <ul>
+            <li><strong>Vertical Height</strong> - Vertical measurement between levels (300mm - 6000mm)</li>
+            <li><strong>Ladder Width</strong> - Desired width of the ladder measuring between stiles (375mm - 525mm)</li>
+            <li><strong>Ladder Pitch</strong> - Desired slope of the ladder (70° - 90°)</li>
+          </ul>
+        </div>
+
+        <div class="subcontent-sub-info tab1" style="display: none">
+          <p>
+            A step ladder is similar to rung ladder where it comprises of two stiles and flat steps that assists user ascending/descending between levels, contra to round rungs. It is to be inclined
+            between 60° and 70°, and can only be permanently fixed to a structure. The Australia Standard AS1657 sets out requirements for the design, selection, construction and installation of
+            ladder and is to be strictly followed for compliances. Please contact certified supplier/installer or refer to Australian Standard AS1657 for more information.
+          </p>
+          <br />
+          <ul>
+            <li><strong>Vertical Height</strong> - Vertical measurement between levels (300mm - 6000mm)</li>
+            <li><strong>Ladder Width</strong> - Desired width of the ladder measuring between stiles (450mm - 750mm)</li>
+            <li><strong>Ladder Pitch</strong> - Desired slope of the ladder (60° - 70°)</li>
+            <li><strong>Handrail Clearance</strong> - Width measuring between handrails (550mm - 750mm)</li>
+          </ul>
+        </div>
+
+        <div class="subcontent-sub-info tab2" style="display: none">
+          <p>
+            A stair, stairway or staircase is a permanent structure designed to connect large vertical distance between level, by dividing it into steps with equal limited vertical distances. A stair
+            is considered safer and provides safer access comparing to rung and step ladder, but it also requires larger area due to its structure. It has a slope between 20° to 45° with a preferred
+            range within 30° to 38°<strong>*</strong>, as well as additional requirements listed below. The Australia Standard AS1657 sets out requirements for the design, selection, construction and
+            installation of stair and is to be strictly followed for compliances. Please contact certified supplier/installer or refer to Australian Standard AS1657 for more information.
+          </p>
+          <br />
+          <ul>
+            <li><strong>Vertical Height</strong> - Vertical measurement between levels (300mm - 4000mm)</li>
+            <li><strong>Stair Width</strong> - Desired width of the stair measuring between stiles (min 600mm)</li>
+            <li><strong>Stair Slope</strong> - Desired slope of the stair (30° - 38°)<strong>*</strong></li>
+            <li><strong>Tread Riser</strong> - Vertical height between treads (130mm - 225mm)</li>
+            <li><strong>Tread Going</strong> - Horizontal measurement between treads (215mm - 355mm)</li>
+            <li><strong>Tread Depth</strong> - Depth of stair treads (Min. 185mm)</li>
+            <li><strong>Tread Gap</strong> - Allowable gap between treads (Max. 30mm)</li>
+          </ul>
+        </div>
+
+        <div class="subcontent-calc_result">
+          <div class="subcontent-inputFields">
+            <p>Vertical Height</p>
+            <input class="input-field" vHeight />
+            <p>Internal Width</p>
+            <input class="input-field" ladderWidth />
+            <p>Desired Pitch</p>
+            <input class="input-field" ladderPitch />
           </div>
-        </div> 
-      -->
+          <br />
+          <div class="subcontent-calculator-btn">
+            <button class="btn-calc">Calculate</button>
+          </div>
+        </div>
+
+        <div class="subcontent-error-message"></div>
+
+        <div class="subcontent-image">
+          <img class="result-img" src="./src/img/ladderdwg0.jpg" alt="Rung Ladder Drawing" />
+        </div>
+      </div>
     </div>
 
-    <div class="container-result">
-      <h3>Result</h3>
-      <div class="result-table">
-        <!-- <ul>
-          <li>Vertical Height:</li>
-          <li>Overall Width:</li>
-          <li>Ladder Pitch:</li>
-          <li>Rung Height:</li>
-          <li>Rung Quantity:</li>
-        </ul> -->
-      </div>
-      <div class="materials-list">
-        <!-- <ul>
-          <h4>Material Usage</h4>
-          <li>Ladder Stile: ${data.totalMaterialStile}mm</li>
-          <li>Ladder Rung: ${data.totalMaterialTread}mm</li>
-        </ul> -->
+    <div class="links-background">
+      <img class="links-background-img" src="./src/img/BGIMGStair.jpeg" alt="stair tower" />
+      <p class="links-citation-text">Image via <a href="https://www.apexindustrialco.com/">APEX Industrial</a></p>
+    </div>
+    <div class="links-background-fade"></div>
+    <div class="links-menu">
+      <a class="links-about">About</a>
+      <div class="nav-arrow nav-arrow-links">
+        <img class="link-arrow" alt="image arrow" src="./src/img/arrow.png" />
       </div>
     </div>
+
+    <!-- Modals -->
+
+    <div class="modal-about hidden">
+      <button class="modal-close-btn-about">&times;</button>
+      <h2>About</h2>
+      <p>
+        Ladder Size Calculator is a simple tool made to quickly confirm the ladder dimension in accordance to Australian Standard AS1657. However, as the Standard tend to be reviewed and amend over
+        time, the result given may be outdated. It is highly recommended that the final result to be confirmend by certified height safety system supplier. This site is not liable for any losses,
+        damages or compliance issues that incurred in connection with its tool.
+      </p>
+    </div>
+
+    <div class="modal-overlay-about hidden"></div>
+
+    <div class="modal-contact hidden">
+      <button class="modal-close-btn-contact">&times;</button>
+      <div class="contact-form">
+        <h2>Contact me</h2>
+        <p>Please feel free to contact me and I'll respond as soon as possible.</p>
+        <form class="contact-form-input" id="fs-frm" accept-charset="utf-8" action="https://formspree.io/f/xoqrveal" method="post">
+          <input type="text" class="contact-field contact-name" placeholder="Name" name="_name" required />
+          <input type="email" class="contact-field contact-mail" placeholder="E-mail address" name="_sender" required />
+          <textarea class="contact-field contact-msg" rows="10" placeholder="Message.." name="_message" required></textarea>
+          <input type="submit" class="contact-btn" value="Send Message" />
+        </form>
+      </div>
+      <div class="contact-thanks hidden">
+        <h3 class="thanks-msg">Message received. Thank you. I'll respond as soon as possible.</h3>
+      </div>
+    </div>
+
+    <div class="modal-overlay-contact hidden"></div>
+
+    <script type="module" src="./src/js/controller.js"></script>
   </body>
-  <!-- <script type="module" src="src/js/models/classDefaultLadderStair.js"></script> -->
-  <script type="module" src="src/js/controller.js"></script>
+
+  <!-- <footer class="footer">
+    <p>Author: ecSC2</p>
+  </footer> -->
 </html>
